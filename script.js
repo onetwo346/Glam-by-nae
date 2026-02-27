@@ -21,10 +21,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function closeMobileNav() {
+        if (navMenu) navMenu.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            const isOpen = navMenu.classList.contains('active');
+            if (isOpen) {
+                closeMobileNav();
+            } else {
+                navMenu.classList.add('active');
+                hamburger.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            closeMobileNav();
+            // Also close cart if open
+            const cartSidebar = document.getElementById('cartSidebar');
+            if (cartSidebar && cartSidebar.classList.contains('active')) {
+                cartSidebar.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Close nav when tapping a nav link (mobile)
+    if (navMenu) {
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileNav();
+            });
         });
     }
 
@@ -350,7 +387,18 @@ function updateCartDisplay() {
 
 function toggleCart() {
     const cartSidebar = document.getElementById('cartSidebar');
-    cartSidebar.classList.toggle('active');
+    const overlay = document.getElementById('mobileOverlay');
+    const isOpen = cartSidebar.classList.contains('active');
+    
+    if (isOpen) {
+        cartSidebar.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    } else {
+        cartSidebar.classList.add('active');
+        if (overlay && window.innerWidth <= 768) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function checkout() {
