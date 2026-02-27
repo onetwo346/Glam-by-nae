@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Mimi Cosmetics | Glam by Nae</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .page-header { padding: 2.5rem 0 1.5rem !important; }
+        .page-header h1 { font-size: 1.6rem !important; }
+        .page-header p { font-size: 0.75rem !important; }
+        .shop-section { padding: 1.8rem 0 !important; }
+        .shop-filters { padding: 0.8rem 0 !important; }
+        .filter-btn { padding: 0.35rem 1rem !important; font-size: 0.76rem !important; margin: 0.2rem !important; }
+        .products-grid { grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)) !important; gap: 0.9rem !important; margin-bottom: 1.2rem !important; margin-top: 0 !important; }
+        .placeholder-product { height: 140px !important; font-size: 0.78rem !important; }
+        .product-card { border-radius: 10px !important; }
+        .product-card h3 { font-size: 0.84rem !important; padding: 0.55rem 0.75rem 0.2rem !important; font-family: 'Poppins', sans-serif !important; }
+        .product-description { font-size: 0.74rem !important; padding: 0 0.75rem !important; margin-bottom: 0.2rem !important; }
+        .product-rating { font-size: 0.72rem !important; padding: 0 0.75rem !important; margin-bottom: 0.2rem !important; }
+        .product-price { font-size: 0.88rem !important; padding: 0 0.75rem !important; }
+        .btn-add-cart { width: calc(100% - 1.5rem) !important; margin: 0.45rem 0.75rem 0.75rem !important; padding: 0.45rem !important; font-size: 0.74rem !important; }
+        .product-badge { font-size: 0.65rem !important; padding: 0.2rem 0.55rem !important; top: 7px !important; right: 7px !important; }
+        .quick-view { display: none !important; }
+        .section-title { font-size: 1.3rem !important; margin-bottom: 0.3rem !important; }
+        .section-subtitle { font-size: 0.75rem !important; margin-bottom: 1.2rem !important; }
+        .shop-benefits { padding: 1.8rem 0 !important; }
+        .benefits-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 0.8rem !important; }
+        .benefit-card { padding: 1rem 0.75rem !important; }
+        .benefit-icon { font-size: 1.4rem !important; margin-bottom: 0.3rem !important; }
+        .benefit-card h3 { font-size: 0.82rem !important; margin-bottom: 0.2rem !important; }
+        .benefit-card p { font-size: 0.75rem !important; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="38E958F1-042F-45A1-B5AD-6C43D0918F68.png" alt="Glem by Nae" class="logo-img"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="index.html#booking" class="btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Mimi Cosmetics</h1>
+            <p>Our signature beauty line</p>
+        </div>
+    </section>
+
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('makeup')">Makeup</button>
+                <button class="filter-btn" onclick="filterProducts('hair')">Hair Care</button>
+                <button class="filter-btn" onclick="filterProducts('tools')">Tools</button>
+                <button class="filter-btn" onclick="filterProducts('kits')">Kits</button>
+            </div>
+
+            <div class="products-grid shop-grid" id="shopProductsGrid">
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Glam Gloss</div>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <h3>Glam Gloss Collection</h3>
+                    <p class="product-description">High-shine, non-sticky gloss in 6 stunning shades</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (124)</div>
+                    <p class="product-price">$18.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Glam Gloss Collection', 18.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Nae Nude Lipstick</div>
+                        <span class="product-badge new">New</span>
+                    </div>
+                    <h3>Nae Nude Lipstick</h3>
+                    <p class="product-description">Creamy matte formula in 8 nude shades for every skin tone</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (89)</div>
+                    <p class="product-price">$22.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Nae Nude Lipstick', 22.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Lashes</div>
+                    </div>
+                    <h3>Lash Line</h3>
+                    <p class="product-description">3D mink lashes, reusable up to 25 times</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (156)</div>
+                    <p class="product-price">$15.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Lash Line', 15.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Setting Spray</div>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <h3>Glam Setting Spray</h3>
+                    <p class="product-description">Long-lasting formula keeps makeup flawless for 16+ hours</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (203)</div>
+                    <p class="product-price">$25.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Glam Setting Spray', 25.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Matte Lip Kit</div>
+                    </div>
+                    <h3>Matte Lip Kit</h3>
+                    <p class="product-description">Lip liner + liquid lipstick duo in 5 bold shades</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (97)</div>
+                    <p class="product-price">$28.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Matte Lip Kit', 28.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <div class="placeholder-product">Beauty Blender</div>
+                    </div>
+                    <h3>Signature Beauty Blender</h3>
+                    <p class="product-description">Soft, latex-free sponge for flawless foundation application</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (178)</div>
+                    <p class="product-price">$12.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Signature Beauty Blender', 12.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="hair">
+                    <div class="product-image">
+                        <div class="placeholder-product">Edge Control</div>
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <h3>Edge Control</h3>
+                    <p class="product-description">Strong hold, no flaking, perfect edges all day</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (245)</div>
+                    <p class="product-price">$16.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Edge Control', 16.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="hair">
+                    <div class="product-image">
+                        <div class="placeholder-product">Hair Oil</div>
+                    </div>
+                    <h3>Nourishing Hair Oil</h3>
+                    <p class="product-description">Argan & jojoba blend for shine and growth</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (132)</div>
+                    <p class="product-price">$24.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Nourishing Hair Oil', 24.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="hair">
+                    <div class="product-image">
+                        <div class="placeholder-product">Wig Melt Spray</div>
+                        <span class="product-badge new">New</span>
+                    </div>
+                    <h3>Wig Melt Spray</h3>
+                    <p class="product-description">Invisible lace melting formula for natural hairline</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (167)</div>
+                    <p class="product-price">$20.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Wig Melt Spray', 20.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="hair">
+                    <div class="product-image">
+                        <div class="placeholder-product">Lace Glue</div>
+                    </div>
+                    <h3>Professional Lace Glue</h3>
+                    <p class="product-description">Waterproof, sweat-proof hold for 4-6 weeks</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (198)</div>
+                    <p class="product-price">$18.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Professional Lace Glue', 18.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="hair">
+                    <div class="product-image">
+                        <div class="placeholder-product">Heat Protectant</div>
+                    </div>
+                    <h3>Heat Protectant Spray</h3>
+                    <p class="product-description">Protects up to 450°F, adds shine and smoothness</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (143)</div>
+                    <p class="product-price">$19.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Heat Protectant Spray', 19.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="kits">
+                    <div class="product-image">
+                        <div class="placeholder-product">Bridal Kit</div>
+                        <span class="product-badge">Limited</span>
+                    </div>
+                    <h3>Bridal Glam Kit</h3>
+                    <p class="product-description">Complete bridal makeup essentials in one luxe kit</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (76)</div>
+                    <p class="product-price">$85.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Bridal Glam Kit', 85.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="kits">
+                    <div class="product-image">
+                        <div class="placeholder-product">Wig Install Kit</div>
+                    </div>
+                    <h3>Wig Install Kit</h3>
+                    <p class="product-description">Everything you need for perfect wig installation</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (112)</div>
+                    <p class="product-price">$55.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Wig Install Kit', 55.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="kits">
+                    <div class="product-image">
+                        <div class="placeholder-product">Travel Glam Bag</div>
+                    </div>
+                    <h3>Travel Glam Bag</h3>
+                    <p class="product-description">Mini versions of bestsellers in chic travel case</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (94)</div>
+                    <p class="product-price">$45.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Travel Glam Bag', 45.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <div class="placeholder-product">Brush Set</div>
+                    </div>
+                    <h3>Pro Brush Set (12pc)</h3>
+                    <p class="product-description">Professional makeup brushes with rose gold handles</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (156)</div>
+                    <p class="product-price">$65.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pro Brush Set (12pc)', 65.00)">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="placeholder-product">Highlighter Palette</div>
+                    </div>
+                    <h3>Glow Highlighter Palette</h3>
+                    <p class="product-description">4 shades from subtle glow to blinding shine</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (187)</div>
+                    <p class="product-price">$32.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Glow Highlighter Palette', 32.00)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $50</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💯</div>
+                    <h3>Quality Guaranteed</h3>
+                    <p>Quality ingredients only</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💝</div>
+                    <h3>Loyalty Rewards</h3>
+                    <p>Earn points with every purchase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Glam by Nae</h3>
+                    <p>Glam, everyday energy</p>
+                    <p class="footer-tagline">Book the Look. Own the Room.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get glam tips & exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glam by Nae. All rights reserved. | Albany, NY</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Only append NEW admin-added products (beyond the original 16) — never overwrite existing HTML cards
+        function renderShopProducts() {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const grid = document.getElementById('shopProductsGrid');
+            if (!products.length || !grid) return;
+
+            // Original 16 product IDs that already exist in HTML
+            const originalIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+            const newProducts = products.filter(p => !originalIds.includes(p.id));
+
+            newProducts.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.dataset.category = p.category;
+                card.innerHTML = `
+                    <div class="product-image">
+                        <div class="placeholder-product">${p.name}</div>
+                    </div>
+                    <h3>${p.name}</h3>
+                    <p class="product-description">${p.description}</p>
+                    <p class="product-price">$${p.price.toFixed(2)}</p>
+                    <button class="btn-add-cart" onclick="addToCart('${p.name.replace(/'/g,"\\'")}', ${p.price})">Add to Cart</button>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderShopProducts);
+    </script>
+</body>
+</html>

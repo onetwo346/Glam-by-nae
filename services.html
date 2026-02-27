@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Glam by Nae</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="38E958F1-042F-45A1-B5AD-6C43D0918F68.png" alt="Glem by Nae" class="logo-img"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="index.html#booking" class="btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Glam tailored to perfection</p>
+        </div>
+    </section>
+
+    <section class="services-detail" id="makeup">
+        <div class="container">
+            <h2 class="section-title">Makeup Services</h2>
+            <p class="section-subtitle">From soft glam to full beat perfection</p>
+            
+            <div class="service-detail-grid">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Soft Glam</h3>
+                        <p class="service-price">$65</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 45 minutes</p>
+                    <p class="service-description">
+                        Perfect for everyday elegance. Natural enhancement with a touch of glam. 
+                        Includes foundation, concealer, soft eye look, lashes, and nude lip.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Skin prep & primer</li>
+                        <li>✓ Flawless base</li>
+                        <li>✓ Soft eye makeup</li>
+                        <li>✓ Natural lashes</li>
+                        <li>✓ Nude lip combo</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Soft Glam</a>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Full Glam</h3>
+                        <p class="service-price">$85</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 60 minutes</p>
+                    <p class="service-description">
+                        Bold and beautiful. Full coverage, dramatic eyes, statement lashes, and bold lips. 
+                        Perfect for nights out and special occasions.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Full coverage foundation</li>
+                        <li>✓ Dramatic contouring</li>
+                        <li>✓ Smokey or glam eye</li>
+                        <li>✓ Dramatic lashes</li>
+                        <li>✓ Bold lip color</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Full Glam</a>
+                </div>
+
+                <div class="service-detail-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-detail-header">
+                        <h3>Bridal Glam</h3>
+                        <p class="service-price">$150</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 90 minutes</p>
+                    <p class="service-description">
+                        Your special day deserves perfection. Long-lasting, camera-ready makeup that 
+                        looks flawless in person and in photos. Includes trial session.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Consultation & trial</li>
+                        <li>✓ Airbrush foundation</li>
+                        <li>✓ Custom eye design</li>
+                        <li>✓ Lashes</li>
+                        <li>✓ Long-wear lip</li>
+                        <li>✓ Touch-up kit</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Bridal Glam</a>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Photoshoot Glam</h3>
+                        <p class="service-price">$110</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 75 minutes</p>
+                    <p class="service-description">
+                        Camera-ready perfection. HD makeup that photographs beautifully. 
+                        Ideal for professional shoots, headshots, and content creation.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ HD foundation</li>
+                        <li>✓ Enhanced features</li>
+                        <li>✓ Camera-ready finish</li>
+                        <li>✓ Multiple looks option</li>
+                        <li>✓ Touch-ups included</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Photoshoot Glam</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="hair">
+        <div class="container">
+            <h2 class="section-title">Hair Services</h2>
+            <p class="section-subtitle">Expert styling for every occasion</p>
+            
+            <div class="service-detail-grid">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Silk Press</h3>
+                        <p class="service-price">$70</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 2 hours</p>
+                    <p class="service-description">
+                        Sleek, smooth, and silky. Professional silk press that leaves your hair 
+                        flowing and healthy. Heat protectant and finishing products included.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Deep cleanse shampoo</li>
+                        <li>✓ Conditioning treatment</li>
+                        <li>✓ Heat protection</li>
+                        <li>✓ Blow dry & flat iron</li>
+                        <li>✓ Trim (if needed)</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Silk Press</a>
+                </div>
+
+                <div class="service-detail-card featured">
+                    <div class="featured-badge">Signature Service</div>
+                    <div class="service-detail-header">
+                        <h3>Wig Install</h3>
+                        <p class="service-price">$120</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 2.5 hours</p>
+                    <p class="service-description">
+                        Flawless wig installation that looks natural. Custom fitting, lace melting, 
+                        and styling included. Bring your own wig or choose from our collection.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Wig customization</li>
+                        <li>✓ Lace melting</li>
+                        <li>✓ Secure installation</li>
+                        <li>✓ Baby hair styling</li>
+                        <li>✓ Styling & curling</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Wig Install</a>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Braids</h3>
+                        <p class="service-price">$100+</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 3-5 hours</p>
+                    <p class="service-description">
+                        Protective styling at its finest. Box braids, knotless braids, cornrows, 
+                        and more. Price varies by style and length.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Hair prep & wash</li>
+                        <li>✓ Edge control</li>
+                        <li>✓ Neat parting</li>
+                        <li>✓ Custom length</li>
+                        <li>✓ Styling options</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Braids</a>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <h3>Quick Style</h3>
+                        <p class="service-price">$45</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 45 minutes</p>
+                    <p class="service-description">
+                        Fast and fabulous. Curls, ponytails, buns, or touch-ups. 
+                        Perfect for events or when you need a quick refresh.
+                    </p>
+                    <ul class="service-includes">
+                        <li>✓ Quick wash or refresh</li>
+                        <li>✓ Styling product</li>
+                        <li>✓ Heat styling</li>
+                        <li>✓ Edge laying</li>
+                        <li>✓ Finishing spray</li>
+                    </ul>
+                    <a href="index.html#booking" class="btn-primary">Book Quick Style</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="combos">
+        <div class="container">
+            <h2 class="section-title">Combo Packages</h2>
+            <p class="section-subtitle">Complete transformation packages</p>
+            
+            <div class="service-detail-grid">
+                <div class="service-detail-card combo-card">
+                    <div class="service-detail-header">
+                        <h3>Hair + Makeup</h3>
+                        <p class="service-price">$170</p>
+                        <p class="savings">Save $15!</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 2.5 hours</p>
+                    <p class="service-description">
+                        Complete glam package. Choose any hair service + full glam makeup. 
+                        Perfect for weddings, proms, and special events.
+                    </p>
+                    <a href="index.html#booking" class="btn-primary">Book Combo</a>
+                </div>
+
+                <div class="service-detail-card combo-card featured">
+                    <div class="featured-badge">Best Value</div>
+                    <div class="service-detail-header">
+                        <h3>Event Package</h3>
+                        <p class="service-price">$200</p>
+                        <p class="savings">Save $25!</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 3 hours</p>
+                    <p class="service-description">
+                        VIP treatment for your special event. Full hair styling, full glam makeup, 
+                        lashes, and touch-up kit. Includes consultation.
+                    </p>
+                    <a href="index.html#booking" class="btn-primary">Book Event Package</a>
+                </div>
+
+                <div class="service-detail-card combo-card">
+                    <div class="service-detail-header">
+                        <h3>Birthday Glam</h3>
+                        <p class="service-price">$180</p>
+                        <p class="savings">Save $20!</p>
+                    </div>
+                    <p class="service-duration">⏱️ Duration: 2.5 hours</p>
+                    <p class="service-description">
+                        Make your birthday unforgettable. Full glam makeup + styling of choice. 
+                        Includes birthday girl special touches and photos.
+                    </p>
+                    <a href="index.html#booking" class="btn-primary">Book Birthday Glam</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-policies">
+        <div class="container">
+            <h2 class="section-title">Booking Policies</h2>
+            
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <h3>💳 Deposits</h3>
+                    <p>50% deposit required to secure your appointment. Deposits are non-refundable but can be transferred to another date with 48-hour notice.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⏰ Cancellations</h3>
+                    <p>Cancellations must be made 48 hours in advance. Late cancellations or no-shows will forfeit the deposit.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⏱️ Arrival Time</h3>
+                    <p>Please arrive 10 minutes early. Late arrivals may result in shortened service time or rescheduling.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>✨ Preparation</h3>
+                    <p>Come with clean, moisturized skin for makeup. Hair should be clean and dry for most hair services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Glam by Nae</h3>
+                    <p>Glam, everyday energy</p>
+                    <p class="footer-tagline">Book the Look. Own the Room.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get glam tips & exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glam by Nae. All rights reserved. | Albany, NY</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

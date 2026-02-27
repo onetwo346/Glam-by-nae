@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nae - Glam by Nae</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .page-header { padding: 2.5rem 0 1.5rem !important; }
+        .page-header h1 { font-size: 1.6rem !important; }
+        .page-header p { font-size: 0.75rem !important; }
+        .section-title { font-size: 1.3rem !important; margin-bottom: 0.3rem !important; }
+        .section-subtitle { font-size: 0.75rem !important; margin-bottom: 1.2rem !important; }
+
+        .about-story { padding: 2rem 0 !important; }
+        .about-grid { gap: 2rem !important; }
+        .placeholder-about { height: 260px !important; font-size: 0.8rem !important; }
+        .about-content-large h2 { font-size: 1.3rem !important; margin-bottom: 0.6rem !important; }
+        .about-text { font-size: 0.82rem !important; line-height: 1.65 !important; margin-bottom: 0.6rem !important; }
+
+        .mission-section { padding: 2rem 0 !important; }
+        .mission-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 1.5rem !important; margin-top: 1.5rem !important; max-width: 1000px !important; margin-left: auto !important; margin-right: auto !important; }
+        .mission-card { padding: 1rem !important; border-radius: 10px !important; }
+        .mission-icon { font-size: 1.5rem !important; margin-bottom: 0.35rem !important; }
+        .mission-card h3 { font-size: 0.85rem !important; margin-bottom: 0.3rem !important; }
+        .mission-card p { font-size: 0.78rem !important; }
+
+        .certifications { padding: 2rem 0 !important; }
+        .cert-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 1.5rem !important; margin-top: 1.5rem !important; max-width: 1000px !important; margin-left: auto !important; margin-right: auto !important; }
+        .cert-card { padding: 1rem !important; border-radius: 10px !important; }
+        .cert-icon { font-size: 1.5rem !important; margin-bottom: 0.35rem !important; }
+        .cert-card h3 { font-size: 0.85rem !important; }
+        .cert-card p { font-size: 0.76rem !important; }
+        .cert-year { font-size: 0.76rem !important; margin-top: 0.3rem !important; }
+
+        .values-section { padding: 2rem 0 !important; }
+        .values-content { max-width: 800px !important; margin-left: auto !important; margin-right: auto !important; }
+        .value-item { padding: 0.9rem 1.1rem !important; margin-bottom: 0.6rem !important; border-radius: 10px !important; }
+        .value-item h3 { font-size: 0.88rem !important; margin-bottom: 0.25rem !important; }
+        .value-item p { font-size: 0.78rem !important; }
+
+        .behind-scenes { padding: 2rem 0 !important; }
+        .bts-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 1.5rem !important; margin-top: 1.5rem !important; max-width: 1000px !important; margin-left: auto !important; margin-right: auto !important; }
+        .placeholder-bts { height: 160px !important; font-size: 0.78rem !important; margin-bottom: 0.5rem !important; border-radius: 10px !important; }
+        .bts-card h3 { font-size: 0.85rem !important; margin-bottom: 0.2rem !important; }
+        .bts-card p { font-size: 0.76rem !important; }
+
+        .journey-timeline { padding: 2rem 0 !important; }
+        .timeline { margin: 1.2rem auto !important; }
+        .timeline-item { margin-bottom: 1.4rem !important; gap: 1.2rem !important; }
+        .timeline-year { font-size: 1.1rem !important; }
+        .timeline-content { padding: 0.9rem 1.1rem !important; border-radius: 10px !important; }
+        .timeline-content h3 { font-size: 0.85rem !important; margin-bottom: 0.2rem !important; }
+        .timeline-content p { font-size: 0.78rem !important; }
+
+        .cta-section { padding: 2rem 0 !important; }
+        .cta-content h2 { font-size: 1.4rem !important; margin-bottom: 0.6rem !important; }
+        .cta-content p { font-size: 0.84rem !important; margin-bottom: 1.2rem !important; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="38E958F1-042F-45A1-B5AD-6C43D0918F68.png" alt="Glem by Nae" class="logo-img"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="index.html#booking" class="btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About Nae</h1>
+            <p>The artist behind the glam</p>
+        </div>
+    </section>
+
+    <section class="about-story">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-large">
+                    <div class="placeholder-about">Nae's Portrait</div>
+                </div>
+                <div class="about-content-large">
+                    <h2>My Story</h2>
+                    <p class="about-text">
+                        Welcome to Glam by Nae! I'm Nae, and beauty has been my passion for as long as I can remember. 
+                        What started as doing makeup for friends and family has blossomed into a thriving beauty business 
+                        right here in Albany, New York.
+                    </p>
+                    <p class="about-text">
+                        My journey in the beauty industry began over 5 years ago when I realized that makeup and hair 
+                        weren't just about looking good—they were about feeling confident, empowered, and ready to take 
+                        on the world. That's the experience I create for every single client who sits in my chair.
+                    </p>
+                    <p class="about-text">
+                        I believe that beauty should be accessible, luxurious, and most importantly, authentic to who you are. 
+                        Whether you're getting ready for your wedding day, a photoshoot, or just want to feel amazing for a 
+                        night out, I'm here to bring your vision to life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">My Mission</h2>
+            <p class="section-subtitle">Empowering beauty, one transformation at a time</p>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">✨</div>
+                    <h3>Confidence First</h3>
+                    <p>Every service is designed to make you feel like the best version of yourself. When you look good, you feel unstoppable.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">💖</div>
+                    <h3>Personalized Care</h3>
+                    <p>No two clients are the same. I take time to understand your style, preferences, and vision to create a look that's uniquely you.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">🌟</div>
+                    <h3>Quality Products</h3>
+                    <p>I use only high-quality products that are safe for your skin and hair. Your health and beauty go hand in hand.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">👑</div>
+                    <h3>The Experience</h3>
+                    <p>From the moment you book to the final reveal, every touchpoint is designed to feel special, elevated, and memorable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Training</h2>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🎓</div>
+                    <h3>Professional Makeup Artistry</h3>
+                    <p>Certified by Empire Beauty School</p>
+                    <p class="cert-year">2019</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">💄</div>
+                    <h3>Advanced Bridal Makeup</h3>
+                    <p>Specialized training in bridal beauty</p>
+                    <p class="cert-year">2020</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">💇‍♀️</div>
+                    <h3>Hair Styling & Installation</h3>
+                    <p>Expert wig installation & styling certification</p>
+                    <p class="cert-year">2021</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">📸</div>
+                    <h3>HD & Photoshoot Makeup</h3>
+                    <p>Camera-ready makeup techniques</p>
+                    <p class="cert-year">2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">What I Stand For</h2>
+            
+            <div class="values-content">
+                <div class="value-item">
+                    <h3>🌸 Inclusivity</h3>
+                    <p>Beauty has no boundaries. I celebrate and cater to all skin tones, hair types, and personal styles. Everyone deserves to feel beautiful.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>💪 Empowerment</h3>
+                    <p>My goal isn't just to make you look good—it's to help you feel powerful, confident, and ready to conquer whatever comes your way.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>🤝 Community</h3>
+                    <p>Glam by Nae is more than a beauty service—it's a community of women supporting women, lifting each other up, and celebrating beauty together.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>🎨 Artistry</h3>
+                    <p>I approach every client as a canvas for creativity. Your face and hair are my art, and I pour my heart into every transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="behind-scenes">
+        <div class="container">
+            <h2 class="section-title">Behind the Scenes</h2>
+            <p class="section-subtitle">A peek into my creative process</p>
+            
+            <div class="bts-grid">
+                <div class="bts-card">
+                    <div class="placeholder-bts">Studio Setup</div>
+                    <h3>My Studio</h3>
+                    <p>A cozy, welcoming space in Albany designed for your comfort and transformation</p>
+                </div>
+                
+                <div class="bts-card">
+                    <div class="placeholder-bts">Product Collection</div>
+                    <h3>Quality Products</h3>
+                    <p>Carefully curated collection of the best beauty products in the industry</p>
+                </div>
+                
+                <div class="bts-card">
+                    <div class="placeholder-bts">Work in Progress</div>
+                    <h3>The Process</h3>
+                    <p>Every detail matters—from consultation to the final touch</p>
+                </div>
+                
+                <div class="bts-card">
+                    <div class="placeholder-bts">Happy Clients</div>
+                    <h3>Client Love</h3>
+                    <p>Nothing beats seeing the smile on a client's face after their transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-timeline">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>The Beginning</h3>
+                        <p>Started doing makeup for friends and family, discovering my passion for beauty artistry</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3>Professional Training</h3>
+                        <p>Enrolled in beauty school and earned professional makeup artistry certification</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>First Bridal Client</h3>
+                        <p>Completed my first bridal makeup, sparking my love for wedding beauty</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Expanded Services</h3>
+                        <p>Added hair services including wig installation and styling to my offerings</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Glam by Nae Launched</h3>
+                        <p>Officially launched my brand and opened my studio in Albany, NY</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Mimi Cosmetics</h3>
+                        <p>Launched my signature cosmetics line, bringing quality products to my clients</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <h3>Growing Strong</h3>
+                        <p>Serving hundreds of happy clients and building a thriving beauty community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience the Glam by Nae Difference?</h2>
+                <p>Let's create your perfect look together. Book your appointment today!</p>
+                <a href="index.html#booking" class="btn-hero">Book Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Glam by Nae</h3>
+                    <p>Glam, everyday energy</p>
+                    <p class="footer-tagline">Book the Look. Own the Room.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get glam tips & exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glem by Nae. All rights reserved. | Albany, NY</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

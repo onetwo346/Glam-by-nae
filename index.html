@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam by Nae - Book the Look. Own the Room.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="38E958F1-042F-45A1-B5AD-6C43D0918F68.png" alt="Glem by Nae" class="logo-img"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <a href="#booking" class="btn-primary">Book Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('download.webp')"></div>
+            <div class="hero-slide" style="background-image: url('images.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('makeup-brushes-decorative-cosmetics-pink-background-with-space-writing-text_23-2148129466.avif')"></div>
+            <div class="hero-slide" style="background-image: url('cosmetic-products-bright-colored-fabric_23-2148181410.avif')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Glam by Nae</h1>
+            <p class="hero-slogan">Book the Look. Own the Room.</p>
+            <p class="hero-subtitle">Glam, everyday energy</p>
+            <a href="#booking" class="btn-hero">Book Your Glam</a>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Where beauty meets confidence</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img class="service-card-img" src="" alt="Makeup">
+                    <div class="service-icon">💄</div>
+                    <h3>Makeup</h3>
+                    <p>Soft glam to full beat perfection</p>
+                    <a href="services.html#makeup" class="btn-secondary">Explore</a>
+                </div>
+                
+                <div class="service-card">
+                    <img class="service-card-img" src="" alt="Hair">
+                    <div class="service-icon">💇‍♀️</div>
+                    <h3>Hair</h3>
+                    <p>Silk press, installs, braids & more</p>
+                    <a href="services.html#hair" class="btn-secondary">Explore</a>
+                </div>
+                
+                <div class="service-card">
+                    <img class="service-card-img" src="" alt="Wigs">
+                    <div class="service-icon">👑</div>
+                    <h3>Wigs</h3>
+                    <p>Custom wig installation & styling</p>
+                    <a href="services.html#wigs" class="btn-secondary">Explore</a>
+                </div>
+                
+                <div class="service-card">
+                    <img class="service-card-img" src="" alt="Combo Packages">
+                    <div class="service-icon">✨</div>
+                    <h3>Combo Packages</h3>
+                    <p>Hair + makeup event packages</p>
+                    <a href="services.html#combos" class="btn-secondary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transformation">
+        <div class="container">
+            <h2 class="section-title">Transformations</h2>
+            <p class="section-subtitle">See the magic happen</p>
+            
+            <div class="transformation-slider">
+                <div class="transformation-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <span class="label">Before</span>
+                            <img class="transform-img" src="" alt="Before">
+                        </div>
+                        <div class="after">
+                            <span class="label">After</span>
+                            <img class="transform-img" src="" alt="After">
+                        </div>
+                    </div>
+                </div>
+                <div class="transformation-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <span class="label">Before</span>
+                            <img class="transform-img" src="" alt="Before">
+                        </div>
+                        <div class="after">
+                            <span class="label">After</span>
+                            <img class="transform-img" src="" alt="After">
+                        </div>
+                    </div>
+                </div>
+                <div class="transformation-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <span class="label">Before</span>
+                            <img class="transform-img" src="" alt="Before">
+                        </div>
+                        <div class="after">
+                            <span class="label">After</span>
+                            <img class="transform-img" src="" alt="After">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Mimi Cosmetics</h2>
+            <p class="section-subtitle">Our signature beauty line</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-img" src="" alt="Glam Gloss">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <h3>Glam Gloss Collection</h3>
+                    <p class="product-price">$18.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Glam Gloss Collection', 18.00)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-img" src="" alt="Nae Nude Lipstick">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <h3>Nae Nude Lipstick</h3>
+                    <p class="product-price">$22.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Nae Nude Lipstick', 22.00)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-img" src="" alt="Lash Line">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <h3>Lash Line</h3>
+                    <p class="product-price">$15.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Lash Line', 15.00)">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-img" src="" alt="Setting Spray">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <h3>Glam Setting Spray</h3>
+                    <p class="product-price">$25.00</p>
+                    <button class="btn-add-cart" onclick="addToCart('Glam Setting Spray', 25.00)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="shop.html" class="btn-primary">Shop All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Let's create your perfect look</p>
+            
+            <div class="booking-form-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service" required onchange="updatePrice()">
+                                <option value="">Select a service</option>
+                                <option value="soft-glam" data-price="65">Soft Glam - $65</option>
+                                <option value="full-glam" data-price="85">Full Glam - $85</option>
+                                <option value="bridal-glam" data-price="150">Bridal Glam - $150</option>
+                                <option value="photoshoot-glam" data-price="110">Photoshoot Glam - $110</option>
+                                <option value="silk-press" data-price="70">Silk Press - $70</option>
+                                <option value="wig-install" data-price="120">Wig Install - $120</option>
+                                <option value="braids" data-price="100">Braids - $100+</option>
+                                <option value="quick-style" data-price="45">Quick Style - $45</option>
+                                <option value="hair-makeup" data-price="170">Hair + Makeup - $170</option>
+                                <option value="event-package" data-price="200">Event Package - $200</option>
+                                <option value="birthday-glam" data-price="180">Birthday Glam - $180</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Notes (Event, Inspiration, etc.)</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your event or any special requests..."></textarea>
+                    </div>
+                    
+                    <div class="booking-summary">
+                        <div class="summary-item">
+                            <span>Service Price:</span>
+                            <span class="price-display" id="priceDisplay">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Deposit Required (50%):</span>
+                            <span class="deposit-display" id="depositDisplay">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-full">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img class="meet-nae-img" src="" alt="Meet Nae">
+                </div>
+                <div class="about-content">
+                    <h2>Meet Nae</h2>
+                    <p class="about-text">
+                        Welcome to Glam by Nae, where your beauty journey becomes an unforgettable experience. 
+                        Based in Albany, New York, I specialize in creating stunning transformations that make you 
+                        feel confident and beautiful.
+                    </p>
+                    <p class="about-text">
+                        From soft glam to full beat perfection, every look is crafted with precision, passion, 
+                        and a personal touch. Let's create magic together.
+                    </p>
+                    <a href="about.html" class="btn-secondary">Learn More About Nae</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <p class="section-subtitle">Real transformations, real confidence</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Nae is absolutely amazing! She did my bridal makeup and I felt like a princess. 
+                        The attention to detail was incredible and it lasted all day!"
+                    </p>
+                    <p class="testimonial-author">- Sarah M.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Best wig install I've ever had! So natural and comfortable. Nae is a true artist 
+                        and I won't go anywhere else."
+                    </p>
+                    <p class="testimonial-author">- Jasmine K.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "The full glam package for my birthday was everything! Nae made me feel so beautiful 
+                        and confident. Can't wait to book again!"
+                    </p>
+                    <p class="testimonial-author">- Michelle T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location" id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <p class="section-subtitle">Albany, New York</p>
+            
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="info-item">
+                        <h3>📍 Location</h3>
+                        <p>Albany, NY</p>
+                        <p>Exact address provided upon booking</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>🕐 Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                        <p>Saturday: 8:00 AM - 8:00 PM</p>
+                        <p>Sunday: By Appointment Only</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>📧 Contact</h3>
+                        <p>Email: hello@glambynae.com</p>
+                        <p>Phone: (518) 555-GLAM</p>
+                        <p>Instagram: @glambynae</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📱 Instagram</a>
+                        <a href="#" class="social-icon">💌 TikTok</a>
+                        <a href="#" class="social-icon">📌 Pinterest</a>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <p>📍 Albany, NY Map</p>
+                        <p class="map-note">Interactive map will be integrated here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Glam by Nae</h3>
+                    <p class="footer-tagline">Glam, everyday energy</p>
+                    <div style="margin-top:0.8rem;">
+                        <a href="#" class="social-icon" style="margin-right:0.5rem;">📱 Instagram</a>
+                        <a href="#" class="social-icon">💌 TikTok</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get glam tips & exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glam by Nae. All rights reserved. | Albany, NY | <a href="admin-login.html" style="color: rgba(255,255,255,0.15); text-decoration: none;">Admin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="booking-modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <div class="modal-success">
+                <div class="success-icon">✓</div>
+                <h2>Booking Confirmed!</h2>
+                <p>Thank you for booking with Glam by Nae!</p>
+                <p>We've sent a confirmation email with all the details.</p>
+                <button class="btn-primary" onclick="closeBookingModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
