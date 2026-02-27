@@ -1691,13 +1691,13 @@ img {
     transform: translateZ(0);
 }
 
-/* ── Body scroll lock (iOS-safe) ── */
-body.nav-open,
-body.cart-open {
+/* ── Scroll lock for mobile nav/cart (iOS-safe) ── */
+html.nav-open,
+html.nav-open body {
+    overflow: hidden;
     position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
+    height: 100%;
 }
 
 /* ── Mobile overlay ── */
@@ -1736,6 +1736,7 @@ body.cart-open {
         transition: right 0.35s ease;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        pointer-events: auto;
     }
     
     .nav-menu.active {
@@ -1748,24 +1749,18 @@ body.cart-open {
     
     .nav-menu a {
         display: block;
-        padding: 1.1rem 0.8rem;
-        font-size: 1.1rem;
+        padding: 1rem 0;
+        font-size: 1.05rem;
         border-bottom: 1px solid #f0e6ea;
-        color: var(--dark);
-        text-decoration: none;
-        -webkit-tap-highlight-color: rgba(244, 167, 185, 0.2);
+        position: relative;
+        z-index: 1;
         touch-action: manipulation;
-        pointer-events: auto;
+        -webkit-tap-highlight-color: rgba(244,167,185,0.2);
+        cursor: pointer;
     }
     
     .nav-menu a::after {
         display: none;
-    }
-    
-    .nav-menu li {
-        list-style: none;
-        width: 100%;
-        pointer-events: auto;
     }
     
     /* ── Hamburger visible + animated ── */

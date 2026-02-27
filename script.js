@@ -27,11 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navMenu) navMenu.classList.remove('active');
         if (hamburger) hamburger.classList.remove('active');
         if (overlay) overlay.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        document.documentElement.classList.remove('nav-open');
     }
 
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
             const isOpen = navMenu.classList.contains('active');
             if (isOpen) {
                 closeMobileNav();
@@ -39,28 +40,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 navMenu.classList.add('active');
                 hamburger.classList.add('active');
                 if (overlay) overlay.classList.add('active');
-                document.body.classList.add('nav-open');
+                document.documentElement.classList.add('nav-open');
             }
         });
     }
 
     if (overlay) {
-        overlay.addEventListener('click', () => {
+        overlay.addEventListener('click', function() {
             closeMobileNav();
-            // Also close cart if open
-            const cartSidebar = document.getElementById('cartSidebar');
+            var cartSidebar = document.getElementById('cartSidebar');
             if (cartSidebar && cartSidebar.classList.contains('active')) {
                 cartSidebar.classList.remove('active');
-                document.body.classList.remove('cart-open');
+                document.documentElement.classList.remove('nav-open');
             }
         });
     }
 
-    // Close nav when tapping a nav link (mobile)
+    // Close nav when tapping a nav link (mobile) — let the link navigate naturally
     if (navMenu) {
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                setTimeout(closeMobileNav, 150);
+        navMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var href = link.getAttribute('href');
+                closeMobileNav();
+                // Small delay to let the nav close animation start, then navigate
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    setTimeout(function() {
+                        window.location.href = href;
+                    }, 150);
+                }
             });
         });
     }
@@ -393,11 +401,11 @@ function toggleCart() {
     if (isOpen) {
         cartSidebar.classList.remove('active');
         if (overlay) overlay.classList.remove('active');
-        document.body.classList.remove('cart-open');
+        document.documentElement.classList.remove('nav-open');
     } else {
         cartSidebar.classList.add('active');
         if (overlay && window.innerWidth <= 768) overlay.classList.add('active');
-        document.body.classList.add('cart-open');
+        document.documentElement.classList.add('nav-open');
     }
 }
 
