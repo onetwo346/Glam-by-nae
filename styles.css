@@ -1853,27 +1853,101 @@ html.nav-open body {
         font-size: 0.95rem;
     }
     
-    /* ── Grids to single column ── */
-    .services-grid,
+    /* ── Compact card grids on mobile ── */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+    
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
     }
-    
+
+    .service-card {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .service-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .service-card p {
+        font-size: 0.65rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-icon {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .btn-secondary {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.8rem;
+    }
+
     .service-card-img {
-        height: 180px;
+        height: 90px;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 0.4rem;
     }
-    
-    .transform-img {
-        height: 200px;
+
+    .product-card {
+        padding: 0.6rem;
+        border-radius: 10px;
     }
-    
+
+    .product-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .product-price {
+        font-size: 0.7rem;
+    }
+
     .product-img {
-        height: 220px;
+        height: 100px;
+        border-radius: 8px;
+    }
+
+    .btn-add-cart {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .transform-img {
+        height: 130px;
     }
     
     .meet-nae-img {
-        height: 300px;
+        height: 200px;
         width: 100%;
+    }
+
+    .testimonial-card {
+        padding: 1rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .services-preview,
+    .transformation,
+    .featured-products,
+    .testimonials {
+        padding: 2rem 0;
     }
     
     .form-row {
