@@ -14,7 +14,7 @@ function logout() {
 
 // ─── Seed real website data on first load ───────────────────────────────────
 function initializeData() {
-    const DATA_VERSION = '5.0'; // Increment to force refresh
+    const DATA_VERSION = '7.0'; // Increment to force refresh
     const currentVersion = localStorage.getItem('dataVersion');
     
     // Force refresh if version changed
@@ -141,10 +141,10 @@ function initializeData() {
                 title: 'Our Services',
                 subtitle: 'Where beauty meets confidence',
                 cards: [
-                    { img: '', icon: '💄', name: 'Makeup', desc: 'Soft glam to full beat perfection' },
-                    { img: '', icon: '💇‍♀️', name: 'Hair', desc: 'Silk press, installs, braids & more' },
-                    { img: '', icon: '👑', name: 'Wigs', desc: 'Custom wig installation & styling' },
-                    { img: '', icon: '✨', name: 'Combo Packages', desc: 'Hair + makeup event packages' }
+                    { img: '81ICnHH89FL._SL1500_.jpg', icon: '💄', name: 'Makeup', desc: 'Soft glam to full beat perfection' },
+                    { img: 'curly_hair_types_mosaic_harmonized-min-e1744025279241.jpg', icon: '💇‍♀️', name: 'Hair', desc: 'Silk press, installs, braids & more' },
+                    { img: 'tv.png', icon: '👑', name: 'Wigs', desc: 'Custom wig installation & styling' },
+                    { img: 'makeup-style.webp', icon: '✨', name: 'Combo Packages', desc: 'Hair + makeup event packages' }
                 ]
             },
             meetNae: {
@@ -539,6 +539,18 @@ function handleImgUpload(fileInput, hiddenId) {
         }
     };
     reader.readAsDataURL(file);
+}
+
+function clearImg(hiddenId) {
+    document.getElementById(hiddenId).value = '';
+    var preview = document.getElementById(hiddenId + '_preview');
+    if (preview) { preview.src = ''; preview.style.display = 'none'; }
+    // Reset the file input
+    var container = preview ? preview.parentElement : null;
+    if (container) {
+        var fileInput = container.querySelector('input[type="file"]');
+        if (fileInput) fileInput.value = '';
+    }
 }
 
 function setImgPreview(hiddenId, dataUrl) {

@@ -19,25 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
         dateInput.setAttribute('min', today);
     }
 
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const overlay = document.getElementById('mobileOverlay');
+    var hamburger = document.querySelector('.hamburger');
+    var mobileNav = document.getElementById('mobileNavMenu');
+    var overlay = document.getElementById('mobileOverlay');
 
     function closeMobileNav() {
-        if (navMenu) navMenu.classList.remove('active');
+        if (mobileNav) mobileNav.classList.remove('active');
         if (hamburger) hamburger.classList.remove('active');
         if (overlay) overlay.classList.remove('active');
         document.documentElement.classList.remove('nav-open');
     }
 
-    if (hamburger) {
+    if (hamburger && mobileNav) {
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
-            const isOpen = navMenu.classList.contains('active');
-            if (isOpen) {
+            if (mobileNav.classList.contains('active')) {
                 closeMobileNav();
             } else {
-                navMenu.classList.add('active');
+                mobileNav.classList.add('active');
                 hamburger.classList.add('active');
                 if (overlay) overlay.classList.add('active');
                 document.documentElement.classList.add('nav-open');
@@ -48,29 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (overlay) {
         overlay.addEventListener('click', function() {
             closeMobileNav();
-            var cartSidebar = document.getElementById('cartSidebar');
-            if (cartSidebar && cartSidebar.classList.contains('active')) {
-                cartSidebar.classList.remove('active');
-                document.documentElement.classList.remove('nav-open');
+            var cs = document.getElementById('cartSidebar');
+            if (cs && cs.classList.contains('active')) {
+                cs.classList.remove('active');
             }
         });
     }
 
-    // Close nav when tapping a nav link (mobile) — let the link navigate naturally
-    if (navMenu) {
-        navMenu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var href = link.getAttribute('href');
+    // Close mobile nav on link tap — browser handles navigation naturally
+    if (mobileNav) {
+        var mobileLinks = mobileNav.getElementsByTagName('a');
+        for (var i = 0; i < mobileLinks.length; i++) {
+            mobileLinks[i].addEventListener('click', function() {
                 closeMobileNav();
-                // Small delay to let the nav close animation start, then navigate
-                if (href && href !== '#') {
-                    e.preventDefault();
-                    setTimeout(function() {
-                        window.location.href = href;
-                    }, 150);
-                }
             });
-        });
+        }
     }
 
     const bookingForm = document.getElementById('bookingForm');

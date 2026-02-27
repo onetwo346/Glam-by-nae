@@ -399,6 +399,24 @@
             background: #FBE5EA;
         }
 
+        .btn-clear-img {
+            display: inline-block;
+            margin-top: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-clear-img:hover {
+            background: #f1b0b7;
+            border-color: #e89da6;
+        }
+
         @media (max-width: 768px) {
             .admin-container {
                 flex-direction: column;
@@ -533,6 +551,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard1Img')">
                             <input type="hidden" id="svcCard1Img">
                             <img id="svcCard1Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard1Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Card 1 — Icon (emoji)</label>
@@ -551,6 +570,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard2Img')">
                             <input type="hidden" id="svcCard2Img">
                             <img id="svcCard2Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard2Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Card 2 — Icon</label>
@@ -569,6 +589,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard3Img')">
                             <input type="hidden" id="svcCard3Img">
                             <img id="svcCard3Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard3Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Card 3 — Icon</label>
@@ -587,6 +608,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard4Img')">
                             <input type="hidden" id="svcCard4Img">
                             <img id="svcCard4Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard4Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Card 4 — Icon</label>
@@ -612,6 +634,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'meetNaeImg')">
                             <input type="hidden" id="meetNaeImg">
                             <img id="meetNaeImg_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('meetNaeImg')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Heading</label>
@@ -649,36 +672,42 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform1Before')">
                             <input type="hidden" id="transform1Before">
                             <img id="transform1Before_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform1Before')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>#1 After Image</label>
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform1After')">
                             <input type="hidden" id="transform1After">
                             <img id="transform1After_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform1After')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>#2 Before Image</label>
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform2Before')">
                             <input type="hidden" id="transform2Before">
                             <img id="transform2Before_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform2Before')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>#2 After Image</label>
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform2After')">
                             <input type="hidden" id="transform2After">
                             <img id="transform2After_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform2After')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>#3 Before Image</label>
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform3Before')">
                             <input type="hidden" id="transform3Before">
                             <img id="transform3Before_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform3Before')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>#3 After Image</label>
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform3After')">
                             <input type="hidden" id="transform3After">
                             <img id="transform3After_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform3After')">Remove Image</button>
                         </div>
                     </div>
                 </div>
@@ -700,6 +729,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod1Img')">
                             <input type="hidden" id="prod1Img">
                             <img id="prod1Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('prod1Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Product 1 — Name</label>
@@ -714,6 +744,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod2Img')">
                             <input type="hidden" id="prod2Img">
                             <img id="prod2Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('prod2Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Product 2 — Name</label>
@@ -728,6 +759,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod3Img')">
                             <input type="hidden" id="prod3Img">
                             <img id="prod3Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('prod3Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Product 3 — Name</label>
@@ -742,6 +774,7 @@
                             <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod4Img')">
                             <input type="hidden" id="prod4Img">
                             <img id="prod4Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('prod4Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
                             <label>Product 4 — Name</label>
