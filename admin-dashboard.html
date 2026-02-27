@@ -417,6 +417,101 @@
             border-color: #e89da6;
         }
 
+        /* Accordion styles */
+        .accordion-card {
+            background: #fff;
+            border: 2px solid #f0e6ea;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-card:hover {
+            border-color: #C4788A;
+            box-shadow: 0 4px 12px rgba(196, 120, 138, 0.1);
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, #FFF5F7 0%, #FDEEF1 100%);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0e6ea;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #FDEEF1 0%, #FBE5EA 100%);
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            color: #5A1A2A;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: #C4788A;
+        }
+
+        .accordion-card.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-card.active .accordion-content {
+            max-height: 2000px;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+        }
+
+        /* Section styling improvements */
+        .homepage-section {
+            background: #fff;
+            border: 2px solid #f0e6ea;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .homepage-section h3 {
+            margin-bottom: 1.2rem;
+            color: #5A1A2A;
+            font-size: 1.1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0e6ea;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-header {
+            position: sticky;
+            top: 0;
+            background: #F5F5F5;
+            z-index: 100;
+            padding: 1rem 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f0e6ea;
+        }
+
         @media (max-width: 768px) {
             .admin-container {
                 flex-direction: column;
@@ -447,8 +542,17 @@
                 padding: 1rem;
                 min-height: 52px;
             }
+
+            .accordion-body {
+                padding: 1rem;
+            }
         }
     </style>
+    <script>
+        function toggleAccordion(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
     <div class="admin-header">
@@ -512,8 +616,8 @@
                 </div>
 
                 <!-- Hero -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">🎬 Hero Section</h3>
+                <div class="homepage-section">
+                    <h3>🎬 Hero Section</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Title</label>
@@ -535,9 +639,9 @@
                 </div>
 
                 <!-- Services Preview -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">💄 Services Preview (4 Cards)</h3>
-                    <div class="form-grid">
+                <div class="homepage-section">
+                    <h3>💄 Services Preview</h3>
+                    <div class="form-grid" style="margin-bottom: 1.5rem;">
                         <div class="form-group">
                             <label>Section Title</label>
                             <input type="text" id="svcPreviewTitle">
@@ -546,88 +650,144 @@
                             <label>Section Subtitle</label>
                             <input type="text" id="svcPreviewSub">
                         </div>
-                        <div class="form-group">
-                            <label>Card 1 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard1Img')">
-                            <input type="hidden" id="svcCard1Img">
-                            <img id="svcCard1Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard1Img')">Remove Image</button>
+                    </div>
+
+                    <!-- Service Card 1 -->
+                    <div class="accordion-card active" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            <h4>💄 Service Card 1</h4>
+                            <span class="accordion-icon">▼</span>
                         </div>
-                        <div class="form-group">
-                            <label>Card 1 — Icon (emoji)</label>
-                            <input type="text" id="svcCard1Icon">
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard1Img')">
+                                        <input type="hidden" id="svcCard1Img">
+                                        <img id="svcCard1Img_preview" class="admin-img-preview" src="" alt="">
+                                        <button type="button" class="btn-clear-img" onclick="clearImg('svcCard1Img')">Remove Image</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Icon (emoji)</label>
+                                        <input type="text" id="svcCard1Icon" placeholder="💄">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="svcCard1Name" placeholder="Makeup">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" id="svcCard1Desc" placeholder="Soft glam to full beat perfection">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Card 1 — Name</label>
-                            <input type="text" id="svcCard1Name">
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="accordion-card" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            <h4>💇‍♀️ Service Card 2</h4>
+                            <span class="accordion-icon">▼</span>
                         </div>
-                        <div class="form-group">
-                            <label>Card 1 — Description</label>
-                            <input type="text" id="svcCard1Desc">
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard2Img')">
+                                        <input type="hidden" id="svcCard2Img">
+                                        <img id="svcCard2Img_preview" class="admin-img-preview" src="" alt="">
+                                        <button type="button" class="btn-clear-img" onclick="clearImg('svcCard2Img')">Remove Image</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Icon (emoji)</label>
+                                        <input type="text" id="svcCard2Icon" placeholder="💇‍♀️">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="svcCard2Name" placeholder="Hair">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" id="svcCard2Desc" placeholder="Silk press, installs, braids & more">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Card 2 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard2Img')">
-                            <input type="hidden" id="svcCard2Img">
-                            <img id="svcCard2Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard2Img')">Remove Image</button>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="accordion-card" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            <h4>👑 Service Card 3</h4>
+                            <span class="accordion-icon">▼</span>
                         </div>
-                        <div class="form-group">
-                            <label>Card 2 — Icon</label>
-                            <input type="text" id="svcCard2Icon">
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard3Img')">
+                                        <input type="hidden" id="svcCard3Img">
+                                        <img id="svcCard3Img_preview" class="admin-img-preview" src="" alt="">
+                                        <button type="button" class="btn-clear-img" onclick="clearImg('svcCard3Img')">Remove Image</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Icon (emoji)</label>
+                                        <input type="text" id="svcCard3Icon" placeholder="👑">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="svcCard3Name" placeholder="Wigs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" id="svcCard3Desc" placeholder="Custom wig installation & styling">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Card 2 — Name</label>
-                            <input type="text" id="svcCard2Name">
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="accordion-card" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            <h4>✨ Service Card 4</h4>
+                            <span class="accordion-icon">▼</span>
                         </div>
-                        <div class="form-group">
-                            <label>Card 2 — Description</label>
-                            <input type="text" id="svcCard2Desc">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard3Img')">
-                            <input type="hidden" id="svcCard3Img">
-                            <img id="svcCard3Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard3Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Icon</label>
-                            <input type="text" id="svcCard3Icon">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Name</label>
-                            <input type="text" id="svcCard3Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Description</label>
-                            <input type="text" id="svcCard3Desc">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard4Img')">
-                            <input type="hidden" id="svcCard4Img">
-                            <img id="svcCard4Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('svcCard4Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Icon</label>
-                            <input type="text" id="svcCard4Icon">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Name</label>
-                            <input type="text" id="svcCard4Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Description</label>
-                            <input type="text" id="svcCard4Desc">
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" accept="image/*" onchange="handleImgUpload(this,'svcCard4Img')">
+                                        <input type="hidden" id="svcCard4Img">
+                                        <img id="svcCard4Img_preview" class="admin-img-preview" src="" alt="">
+                                        <button type="button" class="btn-clear-img" onclick="clearImg('svcCard4Img')">Remove Image</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Icon (emoji)</label>
+                                        <input type="text" id="svcCard4Icon" placeholder="✨">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="svcCard4Name" placeholder="Combo Packages">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input type="text" id="svcCard4Desc" placeholder="Hair + makeup event packages">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Meet Nae -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">👩 Meet Nae Section</h3>
+                <div class="homepage-section">
+                    <h3>👩 Meet Nae Section</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Photo</label>
@@ -656,8 +816,8 @@
                 </div>
 
                 <!-- Transformations -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">✨ Transformations (3 Before/After)</h3>
+                <div class="homepage-section">
+                    <h3>✨ Transformations (3 Before/After)</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Section Title</label>
@@ -713,8 +873,8 @@
                 </div>
 
                 <!-- Mimi Cosmetics -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">🛍️ Mimi Cosmetics (4 Products)</h3>
+                <div class="homepage-section">
+                    <h3>🛍️ Mimi Cosmetics (4 Products)</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Section Title</label>
