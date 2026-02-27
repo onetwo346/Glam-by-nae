@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Admin Dashboard - Glam by Nae</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -373,17 +375,60 @@
         }
 
         input[type="file"] {
-            padding: 0.4rem;
-            font-size: 0.82rem;
-            border: 1.5px dashed #C4788A;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            border: 2px dashed #C4788A;
             border-radius: 8px;
             background: #FFF5F7;
             cursor: pointer;
             color: #5A1A2A;
+            min-height: 48px;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
-        input[type="file"]:hover {
+        input[type="file"]:hover,
+        input[type="file"]:focus {
             background: #FDEEF1;
+            border-color: #5A1A2A;
+            outline: none;
+        }
+
+        input[type="file"]:active {
+            background: #FBE5EA;
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .admin-content {
+                padding: 1rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-img-preview {
+                width: 100%;
+                height: 120px;
+                max-width: 200px;
+            }
+            
+            input[type="file"] {
+                font-size: 1rem;
+                padding: 1rem;
+                min-height: 52px;
+            }
         }
     </style>
 </head>

@@ -1668,6 +1668,23 @@ section[id] {
     transform: translateY(0);
 }
 
+/* iOS-specific fixes */
+img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.service-card-img,
+.transform-img,
+.product-img,
+.meet-nae-img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -1690,6 +1707,23 @@ section[id] {
         grid-template-columns: 1fr;
     }
     
+    .service-card-img {
+        height: 180px;
+    }
+    
+    .transform-img {
+        height: 200px;
+    }
+    
+    .product-img {
+        height: 220px;
+    }
+    
+    .meet-nae-img {
+        height: 300px;
+        width: 100%;
+    }
+    
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -1701,6 +1735,11 @@ section[id] {
     
     .before-after {
         grid-template-columns: 1fr;
+    }
+    
+    .transformation-slider {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .cart-sidebar {
