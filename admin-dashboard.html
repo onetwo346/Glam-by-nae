@@ -572,7 +572,6 @@
                 <li><a href="#" class="nav-link active" data-section="dashboard"><span class="icon">📊</span> Dashboard</a></li>
                 <li><a href="#" class="nav-link" data-section="homepage"><span class="icon">🏠</span> Homepage</a></li>
                 <li><a href="#" class="nav-link" data-section="services"><span class="icon">💄</span> Services</a></li>
-                <li><a href="#" class="nav-link" data-section="shop"><span class="icon">🛍️</span> Shop Products</a></li>
                 <li><a href="#" class="nav-link" data-section="gallery"><span class="icon">📸</span> Gallery</a></li>
                 <li><a href="#" class="nav-link" data-section="about"><span class="icon">👤</span> About</a></li>
                 <li><a href="#" class="nav-link" data-section="bookings"><span class="icon">📅</span> Bookings</a></li>
@@ -589,11 +588,6 @@
                         <h3>Total Services</h3>
                         <div class="value" id="totalServices">12</div>
                         <div class="change">+2 this month</div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Products</h3>
-                        <div class="value" id="totalProducts">16</div>
-                        <div class="change">+3 new items</div>
                     </div>
                     <div class="stat-card">
                         <h3>Gallery Images</h3>
@@ -817,7 +811,7 @@
 
                 <!-- Transformations -->
                 <div class="homepage-section">
-                    <h3>✨ Transformations (3 Before/After)</h3>
+                    <h3>✨ Transformations (3 Images)</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Section Title</label>
@@ -828,121 +822,25 @@
                             <input type="text" id="transformSub">
                         </div>
                         <div class="form-group">
-                            <label>#1 Before Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform1Before')">
-                            <input type="hidden" id="transform1Before">
-                            <img id="transform1Before_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform1Before')">Remove Image</button>
+                            <label>Image 1</label>
+                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform1Img')">
+                            <input type="hidden" id="transform1Img">
+                            <img id="transform1Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform1Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
-                            <label>#1 After Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform1After')">
-                            <input type="hidden" id="transform1After">
-                            <img id="transform1After_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform1After')">Remove Image</button>
+                            <label>Image 2</label>
+                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform2Img')">
+                            <input type="hidden" id="transform2Img">
+                            <img id="transform2Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform2Img')">Remove Image</button>
                         </div>
                         <div class="form-group">
-                            <label>#2 Before Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform2Before')">
-                            <input type="hidden" id="transform2Before">
-                            <img id="transform2Before_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform2Before')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>#2 After Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform2After')">
-                            <input type="hidden" id="transform2After">
-                            <img id="transform2After_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform2After')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>#3 Before Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform3Before')">
-                            <input type="hidden" id="transform3Before">
-                            <img id="transform3Before_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform3Before')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>#3 After Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform3After')">
-                            <input type="hidden" id="transform3After">
-                            <img id="transform3After_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('transform3After')">Remove Image</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mimi Cosmetics -->
-                <div class="homepage-section">
-                    <h3>🛍️ Mimi Cosmetics (4 Products)</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Section Title</label>
-                            <input type="text" id="productsTitle">
-                        </div>
-                        <div class="form-group">
-                            <label>Section Subtitle</label>
-                            <input type="text" id="productsSub">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 1 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod1Img')">
-                            <input type="hidden" id="prod1Img">
-                            <img id="prod1Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('prod1Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Product 1 — Name</label>
-                            <input type="text" id="prod1Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 1 — Price</label>
-                            <input type="text" id="prod1Price" placeholder="18.00">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 2 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod2Img')">
-                            <input type="hidden" id="prod2Img">
-                            <img id="prod2Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('prod2Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Product 2 — Name</label>
-                            <input type="text" id="prod2Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 2 — Price</label>
-                            <input type="text" id="prod2Price" placeholder="22.00">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 3 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod3Img')">
-                            <input type="hidden" id="prod3Img">
-                            <img id="prod3Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('prod3Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Product 3 — Name</label>
-                            <input type="text" id="prod3Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 3 — Price</label>
-                            <input type="text" id="prod3Price" placeholder="15.00">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 4 — Image</label>
-                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'prod4Img')">
-                            <input type="hidden" id="prod4Img">
-                            <img id="prod4Img_preview" class="admin-img-preview" src="" alt="">
-                            <button type="button" class="btn-clear-img" onclick="clearImg('prod4Img')">Remove Image</button>
-                        </div>
-                        <div class="form-group">
-                            <label>Product 4 — Name</label>
-                            <input type="text" id="prod4Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Product 4 — Price</label>
-                            <input type="text" id="prod4Price" placeholder="25.00">
+                            <label>Image 3</label>
+                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'transform3Img')">
+                            <input type="hidden" id="transform3Img">
+                            <img id="transform3Img_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('transform3Img')">Remove Image</button>
                         </div>
                     </div>
                 </div>
@@ -1054,30 +952,6 @@
                 </div>
             </section>
 
-            <!-- Shop Section -->
-            <section id="shop" class="content-section">
-                <div class="section-header">
-                    <h2>Manage Products</h2>
-                    <button class="btn-add" onclick="openModal('product')">+ Add Product</button>
-                </div>
-                <div class="data-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Product Name</th>
-                                <th>Category</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="productsTable">
-                            <!-- Products will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
             <!-- Gallery Section -->
             <section id="gallery" class="content-section">
                 <div class="section-header">
@@ -1092,7 +966,7 @@
             <!-- About Section -->
             <section id="about" class="content-section">
                 <div class="section-header">
-                    <h2>Edit About Content</h2>
+                    <h2>Edit About & Contact</h2>
                     <button class="btn-add" onclick="saveAbout()">Save All Changes</button>
                 </div>
 
@@ -1116,181 +990,55 @@
                             <label>Story Paragraph 3</label>
                             <textarea id="aboutStory3" rows="3"></textarea>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Mission -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">🎯 My Mission</h3>
-                    <div class="form-grid">
                         <div class="form-group">
-                            <label>Mission Subtitle</label>
-                            <input type="text" id="aboutMissionSub">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 1 — Title</label>
-                            <input type="text" id="missionCard1Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 1 — Text</label>
-                            <textarea id="missionCard1Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Card 2 — Title</label>
-                            <input type="text" id="missionCard2Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 2 — Text</label>
-                            <textarea id="missionCard2Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Title</label>
-                            <input type="text" id="missionCard3Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 3 — Text</label>
-                            <textarea id="missionCard3Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Title</label>
-                            <input type="text" id="missionCard4Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Card 4 — Text</label>
-                            <textarea id="missionCard4Text" rows="2"></textarea>
+                            <label>Nae's Portrait Image</label>
+                            <input type="file" accept="image/*" onchange="handleImgUpload(this,'aboutImg')">
+                            <input type="hidden" id="aboutImg">
+                            <img id="aboutImg_preview" class="admin-img-preview" src="" alt="">
+                            <button type="button" class="btn-clear-img" onclick="clearImg('aboutImg')">Remove Image</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certifications -->
+                <!-- Contact Info -->
                 <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">🎓 Certifications & Training</h3>
+                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">📧 Contact Information</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label>Cert 1 — Title</label>
-                            <input type="text" id="cert1Title">
+                            <label>Section Title</label>
+                            <input type="text" id="contactTitle" value="Get In Touch">
                         </div>
                         <div class="form-group">
-                            <label>Cert 1 — Description</label>
-                            <input type="text" id="cert1Desc">
+                            <label>Location</label>
+                            <input type="text" id="contactLocation" value="Albany, NY">
                         </div>
                         <div class="form-group">
-                            <label>Cert 1 — Year</label>
-                            <input type="text" id="cert1Year">
+                            <label>Location Note</label>
+                            <input type="text" id="contactLocNote" value="Exact address provided upon booking">
                         </div>
                         <div class="form-group">
-                            <label>Cert 2 — Title</label>
-                            <input type="text" id="cert2Title">
+                            <label>Weekday Hours</label>
+                            <input type="text" id="contactHoursWD" value="Monday – Friday: 9:00 AM – 7:00 PM">
                         </div>
                         <div class="form-group">
-                            <label>Cert 2 — Description</label>
-                            <input type="text" id="cert2Desc">
+                            <label>Saturday Hours</label>
+                            <input type="text" id="contactHoursSat" value="Saturday: 8:00 AM – 8:00 PM">
                         </div>
                         <div class="form-group">
-                            <label>Cert 2 — Year</label>
-                            <input type="text" id="cert2Year">
+                            <label>Sunday Hours</label>
+                            <input type="text" id="contactHoursSun" value="Sunday: By Appointment Only">
                         </div>
                         <div class="form-group">
-                            <label>Cert 3 — Title</label>
-                            <input type="text" id="cert3Title">
+                            <label>Email</label>
+                            <input type="text" id="contactEmail" value="hello@glambynae.com">
                         </div>
                         <div class="form-group">
-                            <label>Cert 3 — Description</label>
-                            <input type="text" id="cert3Desc">
+                            <label>Phone</label>
+                            <input type="text" id="contactPhone" value="(518) 555-GLAM">
                         </div>
                         <div class="form-group">
-                            <label>Cert 3 — Year</label>
-                            <input type="text" id="cert3Year">
-                        </div>
-                        <div class="form-group">
-                            <label>Cert 4 — Title</label>
-                            <input type="text" id="cert4Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Cert 4 — Description</label>
-                            <input type="text" id="cert4Desc">
-                        </div>
-                        <div class="form-group">
-                            <label>Cert 4 — Year</label>
-                            <input type="text" id="cert4Year">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Values -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">💎 What I Stand For</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Value 1 — Title</label>
-                            <input type="text" id="value1Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Value 1 — Text</label>
-                            <textarea id="value1Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Value 2 — Title</label>
-                            <input type="text" id="value2Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Value 2 — Text</label>
-                            <textarea id="value2Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Value 3 — Title</label>
-                            <input type="text" id="value3Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Value 3 — Text</label>
-                            <textarea id="value3Text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Value 4 — Title</label>
-                            <input type="text" id="value4Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Value 4 — Text</label>
-                            <textarea id="value4Text" rows="2"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Behind the Scenes -->
-                <div class="data-table" style="padding: 1.5rem; margin-bottom: 1rem;">
-                    <h3 style="margin-bottom:1rem;color:#5A1A2A;">🎬 Behind the Scenes</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>BTS 1 — Title</label>
-                            <input type="text" id="bts1Title">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 1 — Text</label>
-                            <input type="text" id="bts1Text">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 2 — Title</label>
-                            <input type="text" id="bts2Title">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 2 — Text</label>
-                            <input type="text" id="bts2Text">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 3 — Title</label>
-                            <input type="text" id="bts3Title">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 3 — Text</label>
-                            <input type="text" id="bts3Text">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 4 — Title</label>
-                            <input type="text" id="bts4Title">
-                        </div>
-                        <div class="form-group">
-                            <label>BTS 4 — Text</label>
-                            <input type="text" id="bts4Text">
+                            <label>Instagram</label>
+                            <input type="text" id="contactInsta" value="@glambynae">
                         </div>
                     </div>
                 </div>
@@ -1401,47 +1149,6 @@
                 <div class="form-actions">
                     <button type="submit" class="btn-save">Save Service</button>
                     <button type="button" class="btn-cancel" onclick="closeModal('service')">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Product Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="productModalTitle">Add Product</h3>
-                <button class="close-modal" onclick="closeModal('product')">×</button>
-            </div>
-            <form id="productForm" class="form-grid">
-                <div class="form-group">
-                    <label>Product Name</label>
-                    <input type="text" id="productName" required>
-                </div>
-                <div class="form-group">
-                    <label>Category</label>
-                    <select id="productCategory" required>
-                        <option value="makeup">Makeup</option>
-                        <option value="hair">Hair Care</option>
-                        <option value="tools">Tools</option>
-                        <option value="kits">Kits</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Price ($)</label>
-                    <input type="number" step="0.01" id="productPrice" required>
-                </div>
-                <div class="form-group">
-                    <label>Stock Quantity</label>
-                    <input type="number" id="productStock" required>
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="productDescription" required></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-save">Save Product</button>
-                    <button type="button" class="btn-cancel" onclick="closeModal('product')">Cancel</button>
                 </div>
             </form>
         </div>

@@ -1,6 +1,3 @@
-let cart = [];
-let cartTotal = 0;
-
 document.addEventListener('DOMContentLoaded', function() {
     // Hero slideshow — infinite loop
     const slides = document.querySelectorAll('.hero-slide');
@@ -47,10 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (overlay) {
         overlay.addEventListener('click', function() {
             closeMobileNav();
-            var cs = document.getElementById('cartSidebar');
-            if (cs && cs.classList.contains('active')) {
-                cs.classList.remove('active');
-            }
         });
     }
 
@@ -74,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
         newsletterForm.addEventListener('submit', handleNewsletterSubmit);
     }
 
-    updateCartDisplay();
-
     // Load dynamic content from admin localStorage
     renderServicesInBookingForm();
     renderHomepage();
+    renderGallery();
+    renderAbout();
 });
 
 // Populate booking form service dropdown from admin data
@@ -161,41 +154,16 @@ function renderHomepage() {
             const trSub   = trSection.querySelector('.section-subtitle');
             if (trTitle) trTitle.textContent = tr.title    || 'Transformations';
             if (trSub)   trSub.textContent   = tr.subtitle || '';
-            const items = trSection.querySelectorAll('.transformation-item');
+            var items = trSection.querySelectorAll('.transformation-item');
             if (tr.items && tr.items.length) {
-                tr.items.forEach((t, i) => {
-                    if (items[i]) {
-                        const imgs = items[i].querySelectorAll('.transform-img');
-                        if (imgs[0] && t.before) imgs[0].src = t.before;
-                        if (imgs[1] && t.after)  imgs[1].src = t.after;
-                    }
-                });
-            }
-        }
-    }
-
-    // Mimi Cosmetics / Products
-    if (h.products) {
-        const pr = h.products;
-        const prodSection = document.querySelector('.featured-products');
-        if (prodSection) {
-            const prTitle = prodSection.querySelector('.section-title');
-            const prSub   = prodSection.querySelector('.section-subtitle');
-            if (prTitle) prTitle.textContent = pr.title    || 'Mimi Cosmetics';
-            if (prSub)   prSub.textContent   = pr.subtitle || '';
-            const prodCards = prodSection.querySelectorAll('.product-card');
-            if (pr.items && pr.items.length) {
-                pr.items.forEach((p, i) => {
-                    if (prodCards[i]) {
-                        const img   = prodCards[i].querySelector('.product-img');
-                        const name  = prodCards[i].querySelector('h3');
-                        const price = prodCards[i].querySelector('.product-price');
-                        const btn   = prodCards[i].querySelector('.btn-add-cart');
-                        if (img && p.img) img.src = p.img;
-                        if (name)  name.textContent  = p.name  || '';
-                        if (price) price.textContent = '$' + (p.price || '0.00');
-                        if (btn)   btn.setAttribute('onclick', "addToCart('" + (p.name || '').replace(/'/g, "\\'") + "', " + parseFloat(p.price || 0) + ")");
-                    }
+                var allImages = tr.items.map(function(t) { return t.image; }).filter(Boolean);
+                for (var i = allImages.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var tmp = allImages[i]; allImages[i] = allImages[j]; allImages[j] = tmp;
+                }
+                items.forEach(function(card, i) {
+                    var img = card.querySelector('.transform-img');
+                    if (img && allImages[i]) img.src = allImages[i];
                 });
             }
         }
@@ -259,23 +227,87 @@ function renderHomepage() {
     }
 }
 
+// Render gallery page images from admin localStorage
+function renderGallery() {
+    var grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+    var items = JSON.parse(localStorage.getItem('gallery') || '[]');
+    if (!items.length) return;
+    var slots = grid.querySelectorAll('.gallery-item');
+    slots.forEach(function(slot, i) {
+        if (!items[i]) return;
+        var img = slot.querySelector('.gallery-img');
+        var placeholder = slot.querySelector('.placeholder-gallery');
+        if (img && items[i].image) {
+            img.src = items[i].image;
+            img.style.display = 'block';
+            if (placeholder) placeholder.style.display = 'none';
+        }
+        var overlay = slot.querySelector('.gallery-overlay h3');
+        if (overlay && items[i].title) overlay.textContent = items[i].title;
+    });
+}
+
+// Render about page from admin localStorage
+function renderAbout() {
+    var aboutSection = document.querySelector('.about-story');
+    if (!aboutSection) return;
+    var h = JSON.parse(localStorage.getItem('homepage') || '{}');
+    if (h.meetNae) {
+        var mn = h.meetNae;
+        var img = document.getElementById('aboutNaeImg');
+        var title = document.getElementById('aboutTitle');
+        var p1 = document.getElementById('aboutP1');
+        var p2 = document.getElementById('aboutP2');
+        if (img && mn.img) { img.src = mn.img; img.style.display = 'block'; }
+        if (title && mn.title) title.textContent = mn.title;
+        if (p1 && mn.p1) p1.textContent = mn.p1;
+        if (p2 && mn.p2) p2.textContent = mn.p2;
+    }
+    // Also render contact section on about page
+    if (h.contact) {
+        var c = h.contact;
+        var loc = document.getElementById('contactLocation');
+        var locNote = document.getElementById('contactLocationNote');
+        var h1 = document.getElementById('contactHours1');
+        var h2 = document.getElementById('contactHours2');
+        var h3el = document.getElementById('contactHours3');
+        var email = document.getElementById('contactEmail');
+        var phone = document.getElementById('contactPhone');
+        var insta = document.getElementById('contactInsta');
+        if (loc)     loc.textContent     = c.location   || 'Albany, NY';
+        if (locNote) locNote.textContent = c.locNote    || 'Exact address provided upon booking';
+        if (h1)      h1.textContent      = c.hoursWD    || 'Monday – Friday: 9:00 AM – 7:00 PM';
+        if (h2)      h2.textContent      = c.hoursSat   || 'Saturday: 8:00 AM – 8:00 PM';
+        if (h3el)    h3el.textContent    = c.hoursSun   || 'Sunday: By Appointment Only';
+        if (email)   email.textContent   = 'Email: '     + (c.email     || 'hello@glambynae.com');
+        if (phone)   phone.textContent   = 'Phone: '     + (c.phone     || '(518) 555-GLAM');
+        if (insta)   insta.textContent   = 'Instagram: ' + (c.instagram || '@glambynae');
+    }
+}
+
 function updatePrice() {
     const serviceSelect = document.getElementById('service');
+    if (!serviceSelect) return;
     const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
     const price = selectedOption.getAttribute('data-price') || 0;
     const deposit = (price * 0.5).toFixed(2);
     
-    document.getElementById('priceDisplay').textContent = `$${price}.00`;
-    document.getElementById('depositDisplay').textContent = `$${deposit}`;
+    const priceDisplay = document.getElementById('priceDisplay');
+    const depositDisplay = document.getElementById('depositDisplay');
+    if (priceDisplay) priceDisplay.textContent = `$${price}.00`;
+    if (depositDisplay) depositDisplay.textContent = `$${deposit}`;
 }
 
 function handleBookingSubmit(e) {
     e.preventDefault();
 
     const serviceEl = document.getElementById('service');
+    const nameEl = document.getElementById('name');
+    if (!serviceEl || !nameEl) return;
     const formData = {
         id:      Date.now(),
-        name:    document.getElementById('name').value,
+        name:    nameEl.value,
         email:   document.getElementById('email').value,
         phone:   document.getElementById('phone').value,
         service: serviceEl.options[serviceEl.selectedIndex].text,
@@ -291,20 +323,22 @@ function handleBookingSubmit(e) {
     localStorage.setItem('bookings', JSON.stringify(bookings));
 
     document.getElementById('bookingForm').reset();
-    document.getElementById('priceDisplay').textContent  = '$0.00';
-    document.getElementById('depositDisplay').textContent = '$0.00';
+    const pd = document.getElementById('priceDisplay');
+    const dd = document.getElementById('depositDisplay');
+    if (pd) pd.textContent = '$0.00';
+    if (dd) dd.textContent = '$0.00';
 
     showBookingModal();
 }
 
 function showBookingModal() {
     const modal = document.getElementById('bookingModal');
-    modal.classList.add('active');
+    if (modal) modal.classList.add('active');
 }
 
 function closeBookingModal() {
     const modal = document.getElementById('bookingModal');
-    modal.classList.remove('active');
+    if (modal) modal.classList.remove('active');
 }
 
 function handleNewsletterSubmit(e) {
@@ -315,114 +349,10 @@ function handleNewsletterSubmit(e) {
     e.target.reset();
 }
 
-function addToCart(productName, price) {
-    const existingItem = cart.find(item => item.name === productName);
-    
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            name: productName,
-            price: price,
-            quantity: 1
-        });
-    }
-    
-    updateCartDisplay();
-    toggleCart();
-    
-    const btn = event.target;
-    const originalText = btn.textContent;
-    btn.textContent = 'Added! ✓';
-    btn.style.background = '#4CAF50';
-    
-    setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-    }, 1500);
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartDisplay();
-}
-
-function updateCartDisplay() {
-    const cartItemsContainer = document.getElementById('cartItems');
-    const cartCountElement = document.querySelector('.cart-count');
-    const cartTotalElement = document.getElementById('cartTotal');
-    
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
-        cartCountElement.textContent = '0';
-        cartTotalElement.textContent = '$0.00';
-        return;
-    }
-    
-    let totalItems = 0;
-    let totalPrice = 0;
-    
-    cartItemsContainer.innerHTML = '';
-    
-    cart.forEach((item, index) => {
-        totalItems += item.quantity;
-        totalPrice += item.price * item.quantity;
-        
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <h4>${item.name}</h4>
-                <p class="cart-item-price">$${item.price.toFixed(2)} x ${item.quantity}</p>
-            </div>
-            <button class="remove-item" onclick="removeFromCart(${index})">🗑️</button>
-        `;
-        cartItemsContainer.appendChild(cartItem);
-    });
-    
-    cartCountElement.textContent = totalItems;
-    cartTotalElement.textContent = `$${totalPrice.toFixed(2)}`;
-}
-
-function toggleCart() {
-    const cartSidebar = document.getElementById('cartSidebar');
-    const overlay = document.getElementById('mobileOverlay');
-    const isOpen = cartSidebar.classList.contains('active');
-    
-    if (isOpen) {
-        cartSidebar.classList.remove('active');
-        if (overlay) overlay.classList.remove('active');
-        document.documentElement.classList.remove('nav-open');
-    } else {
-        cartSidebar.classList.add('active');
-        if (overlay && window.innerWidth <= 768) overlay.classList.add('active');
-        document.documentElement.classList.add('nav-open');
-    }
-}
-
-function checkout() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    console.log('Checkout initiated:', {
-        items: cart,
-        total: total
-    });
-    
-    alert(`Thank you for your order! Total: $${total.toFixed(2)}\n\nIn a production environment, this would redirect to payment processing.`);
-    
-    cart = [];
-    updateCartDisplay();
-    toggleCart();
-}
 
 window.onclick = function(event) {
     const modal = document.getElementById('bookingModal');
-    if (event.target === modal) {
+    if (modal && event.target === modal) {
         closeBookingModal();
     }
 }
@@ -430,13 +360,8 @@ window.onclick = function(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         const modal = document.getElementById('bookingModal');
-        if (modal.classList.contains('active')) {
+        if (modal && modal.classList.contains('active')) {
             closeBookingModal();
-        }
-        
-        const cartSidebar = document.getElementById('cartSidebar');
-        if (cartSidebar.classList.contains('active')) {
-            toggleCart();
         }
     }
 });
@@ -455,7 +380,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-document.querySelectorAll('.service-card, .product-card, .testimonial-card').forEach(el => {
+document.querySelectorAll('.service-card, .testimonial-card, .transformation-item, .gallery-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

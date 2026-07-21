@@ -18,16 +18,11 @@
             <ul class="nav-menu nav-menu-desktop">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="shop.html">Shop</a></li>
                 <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="about.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-btn" onclick="toggleCart()">
-                    <span class="cart-icon">🛍️</span>
-                    <span class="cart-count">0</span>
-                </button>
                 <a href="index.html#booking" class="btn-primary">Book Now</a>
             </div>
             <div class="hamburger">
@@ -41,10 +36,9 @@
     <ul class="nav-menu nav-menu-mobile" id="mobileNavMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="shop.html">Shop</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
     </ul>
 
     <section class="page-header">
@@ -69,283 +63,77 @@
 
     <section class="gallery-section">
         <div class="container">
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="galleryGrid">
                 <div class="gallery-item" data-category="makeup bridal">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Bridal Glam Look</div>
-                        <div class="gallery-overlay">
-                            <h3>Bridal Glam</h3>
-                            <p>Soft romantic makeup for the perfect wedding day</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Bridal Glam">
+                        <div class="placeholder-gallery" id="gImg1">Bridal Glam Look</div>
+                        <div class="gallery-overlay"><h3>Bridal Glam</h3><p>Soft romantic makeup for the perfect wedding day</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="hair">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Silk Press</div>
-                        <div class="gallery-overlay">
-                            <h3>Silk Press Perfection</h3>
-                            <p>Sleek and smooth silk press transformation</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Silk Press">
+                        <div class="placeholder-gallery" id="gImg2">Silk Press</div>
+                        <div class="gallery-overlay"><h3>Silk Press Perfection</h3><p>Sleek and smooth silk press transformation</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="makeup events">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Full Glam</div>
-                        <div class="gallery-overlay">
-                            <h3>Full Glam Beat</h3>
-                            <p>Bold and beautiful for a night out</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Full Glam">
+                        <div class="placeholder-gallery" id="gImg3">Full Glam</div>
+                        <div class="gallery-overlay"><h3>Full Glam Beat</h3><p>Bold and beautiful for a night out</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="hair">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Wig Install</div>
-                        <div class="gallery-overlay">
-                            <h3>Custom Wig Install</h3>
-                            <p>Natural-looking lace melting and styling</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Wig Install">
+                        <div class="placeholder-gallery" id="gImg4">Wig Install</div>
+                        <div class="gallery-overlay"><h3>Custom Wig Install</h3><p>Natural-looking lace melting and styling</p></div>
                     </div>
                 </div>
-
-                <div class="gallery-item" data-category="before-after makeup">
-                    <div class="gallery-image before-after-gallery">
-                        <div class="ba-split">
-                            <div class="ba-before">
-                                <span class="ba-label">Before</span>
-                                <div class="placeholder-gallery-small">Before</div>
-                            </div>
-                            <div class="ba-after">
-                                <span class="ba-label">After</span>
-                                <div class="placeholder-gallery-small">After</div>
-                            </div>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h3>Soft Glam Transformation</h3>
-                            <p>Natural beauty enhanced</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="gallery-item" data-category="makeup events">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Birthday Glam</div>
-                        <div class="gallery-overlay">
-                            <h3>Birthday Glam</h3>
-                            <p>Making birthday wishes come true</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Birthday Glam">
+                        <div class="placeholder-gallery" id="gImg5">Birthday Glam</div>
+                        <div class="gallery-overlay"><h3>Birthday Glam</h3><p>Making birthday wishes come true</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="hair">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Braids</div>
-                        <div class="gallery-overlay">
-                            <h3>Knotless Braids</h3>
-                            <p>Protective styling with precision</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Braids">
+                        <div class="placeholder-gallery" id="gImg6">Braids</div>
+                        <div class="gallery-overlay"><h3>Knotless Braids</h3><p>Protective styling with precision</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="makeup bridal">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Bridal Party</div>
-                        <div class="gallery-overlay">
-                            <h3>Bridal Party Glam</h3>
-                            <p>Coordinated beauty for the whole squad</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Bridal Party">
+                        <div class="placeholder-gallery" id="gImg7">Bridal Party</div>
+                        <div class="gallery-overlay"><h3>Bridal Party Glam</h3><p>Coordinated beauty for the whole squad</p></div>
                     </div>
                 </div>
-
-                <div class="gallery-item" data-category="before-after hair">
-                    <div class="gallery-image before-after-gallery">
-                        <div class="ba-split">
-                            <div class="ba-before">
-                                <span class="ba-label">Before</span>
-                                <div class="placeholder-gallery-small">Before</div>
-                            </div>
-                            <div class="ba-after">
-                                <span class="ba-label">After</span>
-                                <div class="placeholder-gallery-small">After</div>
-                            </div>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h3>Wig Install Magic</h3>
-                            <p>From basic to bombshell</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="gallery-item" data-category="makeup">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Photoshoot Glam</div>
-                        <div class="gallery-overlay">
-                            <h3>Photoshoot Ready</h3>
-                            <p>HD makeup for professional shoots</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Photoshoot Glam">
+                        <div class="placeholder-gallery" id="gImg8">Photoshoot Glam</div>
+                        <div class="gallery-overlay"><h3>Photoshoot Ready</h3><p>HD makeup for professional shoots</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="hair events">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Event Updo</div>
-                        <div class="gallery-overlay">
-                            <h3>Elegant Updo</h3>
-                            <p>Sophisticated styling for special occasions</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Event Updo">
+                        <div class="placeholder-gallery" id="gImg9">Event Updo</div>
+                        <div class="gallery-overlay"><h3>Elegant Updo</h3><p>Sophisticated styling for special occasions</p></div>
                     </div>
                 </div>
-
                 <div class="gallery-item" data-category="makeup">
                     <div class="gallery-image">
-                        <div class="placeholder-gallery">Smokey Eye</div>
-                        <div class="gallery-overlay">
-                            <h3>Dramatic Smokey Eye</h3>
-                            <p>Bold eyes that make a statement</p>
-                        </div>
+                        <img class="gallery-img" src="" alt="Smokey Eye">
+                        <div class="placeholder-gallery" id="gImg10">Smokey Eye</div>
+                        <div class="gallery-overlay"><h3>Dramatic Smokey Eye</h3><p>Bold eyes that make a statement</p></div>
                     </div>
                 </div>
-
-                <div class="gallery-item" data-category="before-after makeup">
-                    <div class="gallery-image before-after-gallery">
-                        <div class="ba-split">
-                            <div class="ba-before">
-                                <span class="ba-label">Before</span>
-                                <div class="placeholder-gallery-small">Before</div>
-                            </div>
-                            <div class="ba-after">
-                                <span class="ba-label">After</span>
-                                <div class="placeholder-gallery-small">After</div>
-                            </div>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h3>Full Glam Transformation</h3>
-                            <p>Confidence unlocked</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="hair">
-                    <div class="gallery-image">
-                        <div class="placeholder-gallery">Curls</div>
-                        <div class="gallery-overlay">
-                            <h3>Bouncy Curls</h3>
-                            <p>Voluminous and gorgeous curls</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="makeup events">
-                    <div class="gallery-image">
-                        <div class="placeholder-gallery">Prom Glam</div>
-                        <div class="gallery-overlay">
-                            <h3>Prom Night Glam</h3>
-                            <p>Making prom dreams come true</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="hair">
-                    <div class="gallery-image">
-                        <div class="placeholder-gallery">Ponytail</div>
-                        <div class="gallery-overlay">
-                            <h3>Sleek Ponytail</h3>
-                            <p>Chic and polished styling</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="makeup bridal">
-                    <div class="gallery-image">
-                        <div class="placeholder-gallery">Bridal Makeup</div>
-                        <div class="gallery-overlay">
-                            <h3>Timeless Bridal Beauty</h3>
-                            <p>Classic elegance for the big day</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="before-after hair">
-                    <div class="gallery-image before-after-gallery">
-                        <div class="ba-split">
-                            <div class="ba-before">
-                                <span class="ba-label">Before</span>
-                                <div class="placeholder-gallery-small">Before</div>
-                            </div>
-                            <div class="ba-after">
-                                <span class="ba-label">After</span>
-                                <div class="placeholder-gallery-small">After</div>
-                            </div>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h3>Silk Press Glow Up</h3>
-                            <p>Healthy, flowing hair</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="instagram-feed">
-        <div class="container">
-            <h2 class="section-title">Follow the Journey</h2>
-            <p class="section-subtitle">@glambynae on Instagram</p>
-            
-            <div class="instagram-grid">
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 1</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 234</span>
-                        <span>💬 45</span>
-                    </div>
-                </div>
-                
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 2</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 189</span>
-                        <span>💬 32</span>
-                    </div>
-                </div>
-                
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 3</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 312</span>
-                        <span>💬 67</span>
-                    </div>
-                </div>
-                
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 4</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 276</span>
-                        <span>💬 54</span>
-                    </div>
-                </div>
-                
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 5</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 198</span>
-                        <span>💬 41</span>
-                    </div>
-                </div>
-                
-                <div class="insta-post">
-                    <div class="placeholder-insta">Instagram Post 6</div>
-                    <div class="insta-overlay">
-                        <span>❤️ 267</span>
-                        <span>💬 58</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 2rem;">
-                <a href="#" class="btn-primary">Follow on Instagram</a>
             </div>
         </div>
     </section>
@@ -373,9 +161,9 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="shop.html">Shop</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="about.html#contact">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -404,23 +192,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Shopping Cart</h3>
-            <button class="close-cart" onclick="toggleCart()">✕</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
-        </div>
-    </div>
 
     <script src="script.js"></script>
     <script>

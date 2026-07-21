@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    overflow: hidden;
+}
+
 :root {
     --primary-pink: #F4A7B9;
     --soft-pink: #FADADD;
@@ -451,38 +460,25 @@ h1, h2, h3, h4 {
     gap: 2rem;
 }
 
-.before-after {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.before, .after {
-    position: relative;
-}
-
-.label {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: var(--gradient);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    z-index: 2;
+.transformation-item {
+    overflow: hidden;
+    border-radius: 14px;
 }
 
 .transform-img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     border-radius: 14px;
-    background: linear-gradient(135deg, #F4A7B9 0%, #E8D5C4 100%);
+    transition: transform 0.4s;
+}
+
+.transformation-item:hover .transform-img {
+    transform: scale(1.03);
 }
 
 .transform-img[src=""] {
-    height: 250px;
+    height: 200px;
     background: linear-gradient(135deg, #F4A7B9 0%, #E8D5C4 100%);
 }
 
@@ -677,13 +673,13 @@ h1, h2, h3, h4 {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .meet-nae-img {
     width: 100%;
-    height: 380px;
+    height: 300px;
     object-fit: cover;
     border-radius: 16px;
     background: linear-gradient(135deg, #F4A7B9 0%, #E8C4CE 60%, #FADADD 100%);
@@ -747,18 +743,18 @@ h1, h2, h3, h4 {
 }
 
 .location {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background: white;
 }
 
 .location-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .info-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .info-item h3 {
@@ -1061,7 +1057,7 @@ section[id] {
 
 .page-header {
     background: linear-gradient(135deg, #F4A7B9 0%, #E8C4CE 60%, #FADADD 100%);
-    padding: 4.5rem 0 2.5rem;
+    padding: 3rem 0 1.5rem;
     text-align: center;
     margin-top: 105px;
 }
@@ -1293,7 +1289,7 @@ section[id] {
 }
 
 .about-story {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
 }
 
 .about-image-large {
@@ -1301,8 +1297,8 @@ section[id] {
 }
 
 .about-content-large h2 {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
     color: var(--dark);
 }
 
@@ -1503,7 +1499,7 @@ section[id] {
 }
 
 .cta-section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
     background: linear-gradient(135deg, #FADADD 0%, #F4E8EC 100%);
 }
 
@@ -1548,6 +1544,20 @@ section[id] {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
+}
+
+.gallery-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
 }
 
 .placeholder-gallery {
@@ -1964,12 +1974,8 @@ html.nav-open body {
         gap: 0.8rem;
     }
 
-    .before-after {
-        gap: 0.5rem;
-    }
-
     .transform-img {
-        height: 100px;
+        height: 120px;
         border-radius: 8px;
     }
 
@@ -2087,13 +2093,8 @@ p {
 
 /* About page */
 .about-story,
-.mission-section,
-.certifications,
-.values-section,
-.behind-scenes,
-.journey-timeline,
 .cta-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .about-image-large .placeholder-about {
@@ -2101,13 +2102,13 @@ p {
 }
 
 .about-content-large h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .about-content-large p {
-    font-size: 0.86rem;
-    line-height: 1.7;
+    font-size: 0.82rem;
+    line-height: 1.6;
 }
 
 .mission-grid,
@@ -2147,7 +2148,7 @@ p {
 }
 
 .cta-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /* Services page */

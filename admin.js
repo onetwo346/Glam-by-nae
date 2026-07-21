@@ -14,7 +14,7 @@ function logout() {
 
 // ─── Seed real website data on first load ───────────────────────────────────
 function initializeData() {
-    const DATA_VERSION = '7.0'; // Increment to force refresh
+    const DATA_VERSION = '8.0'; // Increment to force refresh
     const currentVersion = localStorage.getItem('dataVersion');
     
     // Force refresh if version changed
@@ -43,47 +43,18 @@ function initializeData() {
         ]));
     }
 
-    if (!localStorage.getItem('products')) {
-        localStorage.setItem('products', JSON.stringify([
-            { id: 1,  name: 'Glam Gloss Collection',    category: 'makeup', price: 18.00, stock: 50,  description: 'High-shine, non-sticky gloss in 6 stunning shades' },
-            { id: 2,  name: 'Nae Nude Lipstick',        category: 'makeup', price: 22.00, stock: 45,  description: 'Creamy matte formula in 8 nude shades for every skin tone' },
-            { id: 3,  name: 'Lash Line',                category: 'makeup', price: 15.00, stock: 100, description: '3D mink lashes, reusable up to 25 times' },
-            { id: 4,  name: 'Glam Setting Spray',       category: 'makeup', price: 25.00, stock: 60,  description: 'Long-lasting formula keeps makeup flawless for 16+ hours' },
-            { id: 5,  name: 'Matte Lip Kit',            category: 'makeup', price: 28.00, stock: 40,  description: 'Lip liner + liquid lipstick duo in 5 bold shades' },
-            { id: 6,  name: 'Glow Highlighter Palette', category: 'makeup', price: 32.00, stock: 35,  description: '4 shades from subtle glow to blinding shine' },
-            { id: 7,  name: 'Edge Control',             category: 'hair',   price: 16.00, stock: 75,  description: 'Strong hold, no flaking, perfect edges all day' },
-            { id: 8,  name: 'Nourishing Hair Oil',      category: 'hair',   price: 24.00, stock: 55,  description: 'Argan & jojoba blend for shine and growth' },
-            { id: 9,  name: 'Wig Melt Spray',           category: 'hair',   price: 20.00, stock: 65,  description: 'Invisible lace melting formula for natural hairline' },
-            { id: 10, name: 'Professional Lace Glue',   category: 'hair',   price: 18.00, stock: 80,  description: 'Waterproof, sweat-proof hold for 4-6 weeks' },
-            { id: 11, name: 'Heat Protectant Spray',    category: 'hair',   price: 19.00, stock: 70,  description: 'Protects up to 450°F, adds shine and smoothness' },
-            { id: 12, name: 'Signature Beauty Blender', category: 'tools',  price: 12.00, stock: 90,  description: 'Soft, latex-free sponge for flawless foundation application' },
-            { id: 13, name: 'Pro Brush Set (12pc)',     category: 'tools',  price: 65.00, stock: 30,  description: 'Professional makeup brushes with rose gold handles' },
-            { id: 14, name: 'Bridal Glam Kit',          category: 'kits',   price: 85.00, stock: 20,  description: 'Complete bridal makeup essentials in one luxe kit' },
-            { id: 15, name: 'Wig Install Kit',          category: 'kits',   price: 55.00, stock: 25,  description: 'Everything you need for perfect wig installation' },
-            { id: 16, name: 'Travel Glam Bag',          category: 'kits',   price: 45.00, stock: 40,  description: 'Mini versions of bestsellers in chic travel case' }
-        ]));
-    }
-
     if (!localStorage.getItem('gallery')) {
         localStorage.setItem('gallery', JSON.stringify([
             { id: 1,  title: 'Bridal Glam',              category: 'bridal',       image: '' },
             { id: 2,  title: 'Silk Press Perfection',     category: 'hair',         image: '' },
             { id: 3,  title: 'Full Glam Beat',            category: 'makeup',       image: '' },
             { id: 4,  title: 'Custom Wig Install',        category: 'hair',         image: '' },
-            { id: 5,  title: 'Soft Glam Transformation',  category: 'before-after', image: '' },
-            { id: 6,  title: 'Birthday Glam',             category: 'events',       image: '' },
-            { id: 7,  title: 'Knotless Braids',           category: 'hair',         image: '' },
-            { id: 8,  title: 'Bridal Party Glam',         category: 'bridal',       image: '' },
-            { id: 9,  title: 'Wig Install Magic',         category: 'before-after', image: '' },
-            { id: 10, title: 'Photoshoot Ready',          category: 'makeup',       image: '' },
-            { id: 11, title: 'Elegant Updo',              category: 'events',       image: '' },
-            { id: 12, title: 'Dramatic Smokey Eye',       category: 'makeup',       image: '' },
-            { id: 13, title: 'Full Glam Transformation',  category: 'before-after', image: '' },
-            { id: 14, title: 'Bouncy Curls',              category: 'hair',         image: '' },
-            { id: 15, title: 'Prom Night Glam',           category: 'events',       image: '' },
-            { id: 16, title: 'Sleek Ponytail',            category: 'hair',         image: '' },
-            { id: 17, title: 'Timeless Bridal Beauty',    category: 'bridal',       image: '' },
-            { id: 18, title: 'Silk Press Glow Up',        category: 'before-after', image: '' }
+            { id: 5,  title: 'Birthday Glam',             category: 'events',       image: '' },
+            { id: 6,  title: 'Knotless Braids',           category: 'hair',         image: '' },
+            { id: 7,  title: 'Bridal Party Glam',         category: 'bridal',       image: '' },
+            { id: 8,  title: 'Photoshoot Ready',          category: 'makeup',       image: '' },
+            { id: 9,  title: 'Elegant Updo',              category: 'events',       image: '' },
+            { id: 10, title: 'Dramatic Smokey Eye',       category: 'makeup',       image: '' }
         ]));
     }
 
@@ -158,19 +129,12 @@ function initializeData() {
                 title: 'Transformations',
                 subtitle: 'See the magic happen',
                 items: [
-                    { before: '', after: '' },
-                    { before: '', after: '' },
-                    { before: '', after: '' }
-                ]
-            },
-            products: {
-                title: 'Mimi Cosmetics',
-                subtitle: 'Our signature beauty line',
-                items: [
-                    { img: '', name: 'Glam Gloss Collection', price: '18.00' },
-                    { img: '', name: 'Nae Nude Lipstick', price: '22.00' },
-                    { img: '', name: 'Lash Line', price: '15.00' },
-                    { img: '', name: 'Glam Setting Spray', price: '25.00' }
+                    { image: 'unlimited images (1).jpg' },
+                    { image: 'images (2).jpg' },
+                    { image: 'k88kntasi1gkn61ol1yxnb3d.jpg' },
+                    { image: 'case-2.webp' },
+                    { image: 'ai-looks.webp' },
+                    { image: 'Russian-makeup-artist-makes-real-works-of-art-on-the-faces-of-her-clients-60ffc8f959ab4-png__700.jpg' }
                 ]
             },
             testimonials: {
@@ -226,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById(section).classList.add('active');
             if (section === 'homepage')  loadHomepage();
             if (section === 'services') loadServices();
-            if (section === 'shop')     loadProducts();
             if (section === 'gallery')  loadGallery();
             if (section === 'bookings') loadBookings();
             if (section === 'about')    loadAbout();
@@ -235,14 +198,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('serviceForm').addEventListener('submit', saveService);
-    document.getElementById('productForm').addEventListener('submit', saveProduct);
     document.getElementById('galleryForm').addEventListener('submit', saveGalleryItem);
 });
 
 // ─── Dashboard ───────────────────────────────────────────────────────────────
 function loadDashboard() {
     document.getElementById('totalServices').textContent = JSON.parse(localStorage.getItem('services') || '[]').length;
-    document.getElementById('totalProducts').textContent = JSON.parse(localStorage.getItem('products') || '[]').length;
     document.getElementById('totalGallery').textContent  = JSON.parse(localStorage.getItem('gallery')  || '[]').length;
     document.getElementById('totalBookings').textContent = JSON.parse(localStorage.getItem('bookings') || '[]').length;
 }
@@ -278,11 +239,6 @@ function openModal(type) {
         document.getElementById('serviceModalTitle').textContent = 'Add Service';
         document.getElementById('serviceForm').reset();
         editingServiceId = null;
-    } else if (type === 'product') {
-        document.getElementById('productModal').classList.add('active');
-        document.getElementById('productModalTitle').textContent = 'Add Product';
-        document.getElementById('productForm').reset();
-        editingProductId = null;
     } else if (type === 'gallery') {
         document.getElementById('galleryModal').classList.add('active');
         document.getElementById('galleryForm').reset();
@@ -337,77 +293,6 @@ function deleteService(id) {
     localStorage.setItem('services', JSON.stringify(services));
     showToast('Service deleted.');
     loadServices();
-    loadDashboard();
-}
-
-// ─── Products ────────────────────────────────────────────────────────────────
-let editingProductId = null;
-
-function loadProducts() {
-    const products = JSON.parse(localStorage.getItem('products') || '[]');
-    const tbody = document.getElementById('productsTable');
-    if (!products.length) {
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;color:#aaa;">No products yet. Click + Add Product.</td></tr>';
-        return;
-    }
-    tbody.innerHTML = products.map(p => `
-        <tr>
-            <td><strong>${p.name}</strong></td>
-            <td style="text-transform:capitalize">${p.category}</td>
-            <td>$${p.price.toFixed(2)}</td>
-            <td>${p.stock} units</td>
-            <td>
-                <div class="action-btns">
-                    <button class="btn-edit"   onclick="editProduct(${p.id})">Edit</button>
-                    <button class="btn-delete" onclick="deleteProduct(${p.id})">Delete</button>
-                </div>
-            </td>
-        </tr>`).join('');
-}
-
-function saveProduct(e) {
-    e.preventDefault();
-    const products = JSON.parse(localStorage.getItem('products') || '[]');
-    const product = {
-        id:          editingProductId || Date.now(),
-        name:        document.getElementById('productName').value,
-        category:    document.getElementById('productCategory').value,
-        price:       parseFloat(document.getElementById('productPrice').value),
-        stock:       parseInt(document.getElementById('productStock').value),
-        description: document.getElementById('productDescription').value
-    };
-    if (editingProductId) {
-        const idx = products.findIndex(p => p.id === editingProductId);
-        products[idx] = product;
-    } else {
-        products.push(product);
-    }
-    localStorage.setItem('products', JSON.stringify(products));
-    showToast('Product saved! Changes are live on the shop page.');
-    closeModal('product');
-    loadProducts();
-    loadDashboard();
-}
-
-function editProduct(id) {
-    const p = JSON.parse(localStorage.getItem('products') || '[]').find(p => p.id === id);
-    if (!p) return;
-    document.getElementById('productName').value        = p.name;
-    document.getElementById('productCategory').value    = p.category;
-    document.getElementById('productPrice').value       = p.price;
-    document.getElementById('productStock').value       = p.stock;
-    document.getElementById('productDescription').value = p.description;
-    editingProductId = id;
-    document.getElementById('productModalTitle').textContent = 'Edit Product';
-    document.getElementById('productModal').classList.add('active');
-}
-
-function deleteProduct(id) {
-    if (!confirm('Delete this product?')) return;
-    let products = JSON.parse(localStorage.getItem('products') || '[]').filter(p => p.id !== id);
-    localStorage.setItem('products', JSON.stringify(products));
-    showToast('Product deleted.');
-    loadProducts();
     loadDashboard();
 }
 
@@ -599,18 +484,7 @@ function loadHomepage() {
     document.getElementById('transformSub').value   = tr.subtitle || '';
     const trItems = tr.items || [];
     for (let i = 0; i < 3; i++) {
-        setImgPreview('transform' + (i+1) + 'Before', (trItems[i] && trItems[i].before) || '');
-        setImgPreview('transform' + (i+1) + 'After',  (trItems[i] && trItems[i].after)  || '');
-    }
-    // Mimi Cosmetics / Products
-    const pr = h.products || {};
-    document.getElementById('productsTitle').value = pr.title    || 'Mimi Cosmetics';
-    document.getElementById('productsSub').value   = pr.subtitle || '';
-    const prItems = pr.items || [];
-    for (let i = 0; i < 4; i++) {
-        setImgPreview('prod' + (i+1) + 'Img', (prItems[i] && prItems[i].img) || '');
-        document.getElementById('prod' + (i+1) + 'Name').value  = (prItems[i] && prItems[i].name)  || '';
-        document.getElementById('prod' + (i+1) + 'Price').value = (prItems[i] && prItems[i].price) || '';
+        setImgPreview('transform' + (i+1) + 'Img', (trItems[i] && trItems[i].image) || '');
     }
     // Testimonials
     const t = h.testimonials || {};
@@ -659,11 +533,6 @@ function saveHomepage() {
             subtitle: document.getElementById('transformSub').value,
             items: []
         },
-        products: {
-            title:    document.getElementById('productsTitle').value,
-            subtitle: document.getElementById('productsSub').value,
-            items: []
-        },
         testimonials: {
             title:    document.getElementById('testimonialsTitle').value,
             subtitle: document.getElementById('testimonialsSub').value,
@@ -691,15 +560,7 @@ function saveHomepage() {
     }
     for (let i = 1; i <= 3; i++) {
         data.transformations.items.push({
-            before: document.getElementById('transform' + i + 'Before').value,
-            after:  document.getElementById('transform' + i + 'After').value
-        });
-    }
-    for (let i = 1; i <= 4; i++) {
-        data.products.items.push({
-            img:   document.getElementById('prod' + i + 'Img').value,
-            name:  document.getElementById('prod' + i + 'Name').value,
-            price: document.getElementById('prod' + i + 'Price').value
+            image: document.getElementById('transform' + i + 'Img').value
         });
     }
     for (let i = 1; i <= 3; i++) {
@@ -720,32 +581,19 @@ function loadAbout() {
     document.getElementById('aboutStory1').value = a.story1 || '';
     document.getElementById('aboutStory2').value = a.story2 || '';
     document.getElementById('aboutStory3').value = a.story3 || '';
-    // Mission
-    document.getElementById('aboutMissionSub').value = a.missionSub || '';
-    const mc = a.missionCards || [];
-    for (let i = 0; i < 4; i++) {
-        document.getElementById('missionCard' + (i+1) + 'Title').value = (mc[i] && mc[i].title) || '';
-        document.getElementById('missionCard' + (i+1) + 'Text').value  = (mc[i] && mc[i].text)  || '';
-    }
-    // Certifications
-    const ce = a.certs || [];
-    for (let i = 0; i < 4; i++) {
-        document.getElementById('cert' + (i+1) + 'Title').value = (ce[i] && ce[i].title) || '';
-        document.getElementById('cert' + (i+1) + 'Desc').value  = (ce[i] && ce[i].desc)  || '';
-        document.getElementById('cert' + (i+1) + 'Year').value  = (ce[i] && ce[i].year)  || '';
-    }
-    // Values
-    const va = a.values || [];
-    for (let i = 0; i < 4; i++) {
-        document.getElementById('value' + (i+1) + 'Title').value = (va[i] && va[i].title) || '';
-        document.getElementById('value' + (i+1) + 'Text').value  = (va[i] && va[i].text)  || '';
-    }
-    // BTS
-    const bt = a.bts || [];
-    for (let i = 0; i < 4; i++) {
-        document.getElementById('bts' + (i+1) + 'Title').value = (bt[i] && bt[i].title) || '';
-        document.getElementById('bts' + (i+1) + 'Text').value  = (bt[i] && bt[i].text)  || '';
-    }
+    setImgPreview('aboutImg', a.img || '');
+    // Contact info — also check homepage.contact for backwards compat
+    const h = JSON.parse(localStorage.getItem('homepage') || '{}');
+    const c = a.contact || h.contact || {};
+    document.getElementById('contactTitle').value     = c.title     || 'Get In Touch';
+    document.getElementById('contactLocation').value  = c.location  || 'Albany, NY';
+    document.getElementById('contactLocNote').value   = c.locNote   || 'Exact address provided upon booking';
+    document.getElementById('contactHoursWD').value   = c.hoursWD   || 'Monday – Friday: 9:00 AM – 7:00 PM';
+    document.getElementById('contactHoursSat').value  = c.hoursSat  || 'Saturday: 8:00 AM – 8:00 PM';
+    document.getElementById('contactHoursSun').value  = c.hoursSun  || 'Sunday: By Appointment Only';
+    document.getElementById('contactEmail').value     = c.email     || 'hello@glambynae.com';
+    document.getElementById('contactPhone').value     = c.phone     || '(518) 555-GLAM';
+    document.getElementById('contactInsta').value     = c.instagram || '@glambynae';
 }
 
 function saveAbout() {
@@ -754,20 +602,32 @@ function saveAbout() {
         story1: document.getElementById('aboutStory1').value,
         story2: document.getElementById('aboutStory2').value,
         story3: document.getElementById('aboutStory3').value,
-        missionSub: document.getElementById('aboutMissionSub').value,
-        missionCards: [],
-        certs: [],
-        values: [],
-        bts: []
+        img:    document.getElementById('aboutImg').value,
+        contact: {
+            title:     document.getElementById('contactTitle').value,
+            location:  document.getElementById('contactLocation').value,
+            locNote:   document.getElementById('contactLocNote').value,
+            hoursWD:   document.getElementById('contactHoursWD').value,
+            hoursSat:  document.getElementById('contactHoursSat').value,
+            hoursSun:  document.getElementById('contactHoursSun').value,
+            email:     document.getElementById('contactEmail').value,
+            phone:     document.getElementById('contactPhone').value,
+            instagram: document.getElementById('contactInsta').value
+        }
     };
-    for (let i = 1; i <= 4; i++) {
-        data.missionCards.push({ title: document.getElementById('missionCard'+i+'Title').value, text: document.getElementById('missionCard'+i+'Text').value });
-        data.certs.push({ title: document.getElementById('cert'+i+'Title').value, desc: document.getElementById('cert'+i+'Desc').value, year: document.getElementById('cert'+i+'Year').value });
-        data.values.push({ title: document.getElementById('value'+i+'Title').value, text: document.getElementById('value'+i+'Text').value });
-        data.bts.push({ title: document.getElementById('bts'+i+'Title').value, text: document.getElementById('bts'+i+'Text').value });
-    }
     localStorage.setItem('about', JSON.stringify(data));
-    showToast('About content saved! Changes are live on the about page.');
+
+    // Also sync contact + meetNae into homepage so renderAbout() on the live site picks it up
+    const h = JSON.parse(localStorage.getItem('homepage') || '{}');
+    h.contact = data.contact;
+    if (!h.meetNae) h.meetNae = {};
+    h.meetNae.img   = data.img;
+    h.meetNae.title = data.title;
+    h.meetNae.p1    = data.story1;
+    h.meetNae.p2    = data.story2;
+    localStorage.setItem('homepage', JSON.stringify(h));
+
+    showToast('About & Contact saved! Changes are live on the website.');
 }
 
 // ─── Settings ────────────────────────────────────────────────────────────────

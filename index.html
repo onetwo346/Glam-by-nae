@@ -21,16 +21,11 @@
             <ul class="nav-menu nav-menu-desktop">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="shop.html">Shop</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-btn" onclick="toggleCart()">
-                    <span class="cart-icon">🛍️</span>
-                    <span class="cart-count">0</span>
-                </button>
                 <a href="#booking" class="btn-primary">Book Now</a>
             </div>
             <div class="hamburger">
@@ -44,10 +39,9 @@
     <ul class="nav-menu nav-menu-mobile" id="mobileNavMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="shop.html">Shop</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
     </ul>
 
     <section class="hero">
@@ -118,97 +112,18 @@
             
             <div class="transformation-slider">
                 <div class="transformation-item">
-                    <div class="before-after">
-                        <div class="before">
-                            <span class="label">Before</span>
-                            <img class="transform-img" src="" alt="Before">
-                        </div>
-                        <div class="after">
-                            <span class="label">After</span>
-                            <img class="transform-img" src="" alt="After">
-                        </div>
-                    </div>
+                    <img class="transform-img" src="k88kntasi1gkn61ol1yxnb3d.jpg" alt="Transformation 1">
                 </div>
                 <div class="transformation-item">
-                    <div class="before-after">
-                        <div class="before">
-                            <span class="label">Before</span>
-                            <img class="transform-img" src="" alt="Before">
-                        </div>
-                        <div class="after">
-                            <span class="label">After</span>
-                            <img class="transform-img" src="" alt="After">
-                        </div>
-                    </div>
+                    <img class="transform-img" src="case-2.webp" alt="Transformation 2">
                 </div>
                 <div class="transformation-item">
-                    <div class="before-after">
-                        <div class="before">
-                            <span class="label">Before</span>
-                            <img class="transform-img" src="" alt="Before">
-                        </div>
-                        <div class="after">
-                            <span class="label">After</span>
-                            <img class="transform-img" src="" alt="After">
-                        </div>
-                    </div>
+                    <img class="transform-img" src="Russian-makeup-artist-makes-real-works-of-art-on-the-faces-of-her-clients-60ffc8f959ab4-png__700.jpg" alt="Transformation 3">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title">Mimi Cosmetics</h2>
-            <p class="section-subtitle">Our signature beauty line</p>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img class="product-img" src="" alt="Glam Gloss">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <h3>Glam Gloss Collection</h3>
-                    <p class="product-price">$18.00</p>
-                    <button class="btn-add-cart" onclick="addToCart('Glam Gloss Collection', 18.00)">Add to Cart</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img class="product-img" src="" alt="Nae Nude Lipstick">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <h3>Nae Nude Lipstick</h3>
-                    <p class="product-price">$22.00</p>
-                    <button class="btn-add-cart" onclick="addToCart('Nae Nude Lipstick', 22.00)">Add to Cart</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img class="product-img" src="" alt="Lash Line">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <h3>Lash Line</h3>
-                    <p class="product-price">$15.00</p>
-                    <button class="btn-add-cart" onclick="addToCart('Lash Line', 15.00)">Add to Cart</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img class="product-img" src="" alt="Setting Spray">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <h3>Glam Setting Spray</h3>
-                    <p class="product-price">$25.00</p>
-                    <button class="btn-add-cart" onclick="addToCart('Glam Setting Spray', 25.00)">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="shop.html" class="btn-primary">Shop All Products</a>
-            </div>
-        </div>
-    </section>
 
     <section class="booking-section" id="booking">
         <div class="container">
@@ -359,7 +274,7 @@
         </div>
     </section>
 
-    <section class="location" id="contact">
+    <section class="location" id="contact" style="display:none;">
         <div class="container">
             <h2 class="section-title">Visit Us</h2>
             <p class="section-subtitle">Albany, New York</p>
@@ -419,9 +334,9 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="shop.html">Shop</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="about.html#contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -450,23 +365,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Shopping Cart</h3>
-            <button class="close-cart" onclick="toggleCart()">✕</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn-primary btn-full" onclick="checkout()">Checkout</button>
-        </div>
-    </div>
 
     <div class="booking-modal" id="bookingModal">
         <div class="modal-content">
